@@ -40,11 +40,12 @@ class RegisteredCmd {
                         pstr++;
                     }
                     //printf("check <%s>:<%s>\n",buf,p->id());
-                    if (strncmp(buf, p->id() ,pos)==0 )
+                    if ((buf[0] != 0) && 
+					    (strncmp(buf, p->id() ,pos) == 0) )
                     {
+                        //printf("match :%s\n",p->id());
                         p->receive(buf );
                         found=true;
-                        //printf("match :%s\n",p->id());
                         break;
                     }
             }
