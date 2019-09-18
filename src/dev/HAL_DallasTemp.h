@@ -17,7 +17,7 @@
 #define HAL_DALLAS_TEMP_SENS_H_
 
 #include "HAL/HAL.h"
-#include <HAL/HAL_OneWire.h>
+#include <dev/HAL_OneWire.h>
 
 // this would be provided before including, if logging is needed
 #ifndef LogDALLASTEMP
