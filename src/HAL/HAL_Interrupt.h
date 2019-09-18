@@ -12,9 +12,18 @@
 
 #if defined(__AVR__)
 
-// ---------------------------------- AVR specific ------------------------------------------
+// ---------------------------------- AVR specific -------------------------------
 #include <avr/io.h>
 #include <avr/interrupt.h>
+
+
+// ----------------------------- locked sections ---------------------------------
+
+#define BEGIN_CRITICAL_SECTION(a) { uint8_t __s; __s = SREG; cli();
+
+#define END_CRITICAL_SECTION(a) SREG=__s;}
+
+
 // ----------------------------------- Interrupt pins --------------------------
 
 

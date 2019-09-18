@@ -26,28 +26,12 @@
 #include <avr/io.h>
 #include <avr/interrupt.h>
 
-//tbd needs board selection
-#ifndef F_CPU
-#error "CPU Frequency left undefined. Set F_CPU"
-#endif
-
-#include <util/delay.h>
-
-#define delay(d)	_delay_ms(d);
-
-#define delayMicroseconds( us) _delay_us(us)
-
-#define BEGIN_CRITICAL_SECTION(a) { uint8_t __s; __s = SREG; cli();
-
-#define END_CRITICAL_SECTION(a) SREG=__s;}
-
-
 #else
 #error "HAL not defined for this architecture"
 #endif
 
-
-
+// ---------------------------- Timing and CPU Frequency -----------------------------------
+#include "HAL_Delay.h"
 
 // ---------------------------- UART subsystem ---------------------------------------------
 #include "HAL_UART.h"
