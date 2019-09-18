@@ -19,7 +19,39 @@ HAL:
   __AVR_ATmega328P__
   __AVR_ATmega2560__
   ```
-* sample useage of HAL (excerpt from the onewire bus template code, using the IOPin template of HAL )
+
+
+* sample use of HAL. blink a LED using a template for general blinking of HAL Pins
+```C++
+const uint8_t LEDPIN=13;
+
+template<uint8_t pin>
+class LedToggle
+{
+	HALPin<pin> LEDPin;
+	bool toggleled=false;
+public:
+	LedToggle():toggleled(false)
+	{
+		LEDPin.mode(OUTPUT);
+	}
+	void blinkled(void)
+	{
+		LEDPin.write(toggleled);
+		toggleled = ! toggleled;
+	}
+};
+
+LedToggle<LEDPIN> led;
+
+int main(void)
+{
+	delay(100):
+	led.blinkled();
+}
+```
+
+* sample use of HAL (excerpt from the onewire bus template code, using the IOPin to create a onewire protocol pin)
 ```C++
 template<uint8_t PinNumber>
 class OneWire: public HALPin<PinNumber> {
