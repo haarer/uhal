@@ -12,7 +12,7 @@ Author: mac
 #include <stdint.h>
 #include <stdlib.h>
 #include "BaseMotorController.h"
-#include "DCMotor.h"
+#include "dev/DCMotor.h"
 #include "HAL/HAL.h"
 
 template<class T_Motor,uint32_t micros(void),uint32_t millis(void),volatile  uint16_t &m_pinChCount>
