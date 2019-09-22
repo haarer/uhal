@@ -20,10 +20,16 @@
 #define BRAKE 3
 #define RELEASE 4
 
+class DCMotorBase
+{
+	public:
+		virtual void run(uint8_t cmd)=0;
+		virtual void setSpeed(uint8_t speed)=0;
 
+};
 
 template<uint8_t APinNumber, uint8_t BPinNumber,class HPin, class  Tsrc >
-class DCMotor
+class DCMotor:public DCMotorBase
 {
 	uint8_t motornum;
 	Tsrc*  src;
