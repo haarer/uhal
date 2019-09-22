@@ -248,7 +248,18 @@ public:
 			HAL_CASE_DIR_PIN_OUT(11,B,5)
 			HAL_CASE_DIR_PIN_OUT(12,B,6)
 			HAL_CASE_DIR_PIN_OUT(13,B,7)
+			HAL_CASE_DIR_PIN_OUT(14,J,1)
+			HAL_CASE_DIR_PIN_OUT(15,J,0)
+
 			HAL_CASE_DIR_PIN_OUT(16,H,1)
+			HAL_CASE_DIR_PIN_OUT(17,H,0)
+			HAL_CASE_DIR_PIN_OUT(18,D,3)
+			HAL_CASE_DIR_PIN_OUT(19,D,2)
+			HAL_CASE_DIR_PIN_OUT(20,D,1)
+			HAL_CASE_DIR_PIN_OUT(21,D,0)
+			HAL_CASE_DIR_PIN_OUT(22,A,0)
+			HAL_CASE_DIR_PIN_OUT(23,A,1)
+
 #elif defined(__AVR_ATmega168__) || defined(__AVR_ATmega328__) || defined(__AVR_ATmega328P__)
 		HAL_CASE_DIR_PIN_OUT(0,D,0)
 		HAL_CASE_DIR_PIN_OUT(1,D,1)
@@ -302,7 +313,19 @@ public:
 		HAL_CASE_DIR_PIN_IN(13,B,7)
 		HAL_CASE_DIR_PIN_IN(14,J,1)
 		HAL_CASE_DIR_PIN_IN(15,J,0)
+
 		HAL_CASE_DIR_PIN_IN(16,H,1)
+		HAL_CASE_DIR_PIN_IN(17,H,0)
+		HAL_CASE_DIR_PIN_IN(18,D,3)
+		HAL_CASE_DIR_PIN_IN(19,D,2)
+		HAL_CASE_DIR_PIN_IN(20,D,1)
+		HAL_CASE_DIR_PIN_IN(21,D,0)
+		HAL_CASE_DIR_PIN_IN(22,A,0)
+		HAL_CASE_DIR_PIN_IN(23,A,1)
+
+
+
+
 #elif defined(__AVR_ATmega168__) || defined(__AVR_ATmega328__) || defined(__AVR_ATmega328P__)
 		HAL_CASE_DIR_PIN_IN(0,D,0)
 		HAL_CASE_DIR_PIN_IN(1,D,1)
@@ -355,7 +378,18 @@ public:
 		HAL_CASE_DIR_PIN_IN_PULLUP(11,B,5)
 		HAL_CASE_DIR_PIN_IN_PULLUP(12,B,6)
 		HAL_CASE_DIR_PIN_IN_PULLUP(13,B,7)
+		HAL_CASE_DIR_PIN_IN_PULLUP(14,J,1)
+		HAL_CASE_DIR_PIN_IN_PULLUP(15,J,0)
+
 		HAL_CASE_DIR_PIN_IN_PULLUP(16,H,1)
+		HAL_CASE_DIR_PIN_IN_PULLUP(17,H,0)
+		HAL_CASE_DIR_PIN_IN_PULLUP(18,D,3)
+		HAL_CASE_DIR_PIN_IN_PULLUP(19,D,2)
+		HAL_CASE_DIR_PIN_IN_PULLUP(20,D,1)
+		HAL_CASE_DIR_PIN_IN_PULLUP(21,D,0)
+		HAL_CASE_DIR_PIN_IN_PULLUP(22,A,0)
+		HAL_CASE_DIR_PIN_IN_PULLUP(23,A,1)
+
 
 #elif defined(__AVR_ATmega168__) || defined(__AVR_ATmega328__) || defined(__AVR_ATmega328P__)
 		HAL_CASE_DIR_PIN_IN_PULLUP(0,D,0)
@@ -409,7 +443,18 @@ public:
 		HAL_CASE_SET_PIN_HIGH(11,B,5)
 		HAL_CASE_SET_PIN_HIGH(12,B,6)
 		HAL_CASE_SET_PIN_HIGH(13,B,7)
+		HAL_CASE_SET_PIN_HIGH(14,J,1)
+		HAL_CASE_SET_PIN_HIGH(15,J,0)
+
 		HAL_CASE_SET_PIN_HIGH(16,H,1)
+		HAL_CASE_SET_PIN_HIGH(17,H,0)
+		HAL_CASE_SET_PIN_HIGH(18,D,3)
+		HAL_CASE_SET_PIN_HIGH(19,D,2)
+		HAL_CASE_SET_PIN_HIGH(20,D,1)
+		HAL_CASE_SET_PIN_HIGH(21,D,0)
+		HAL_CASE_SET_PIN_HIGH(22,A,0)
+		HAL_CASE_SET_PIN_HIGH(23,A,1)
+	
 #elif defined(__AVR_ATmega168__) || defined(__AVR_ATmega328__) || defined(__AVR_ATmega328P__)
 		HAL_CASE_SET_PIN_HIGH(0,D,0)
 		HAL_CASE_SET_PIN_HIGH(1,D,1)
@@ -461,7 +506,19 @@ public:
 		HAL_CASE_SET_PIN_LOW(11,B,5)
 		HAL_CASE_SET_PIN_LOW(12,B,6)
 		HAL_CASE_SET_PIN_LOW(13,B,7)
+		HAL_CASE_SET_PIN_LOW(14,J,1)
+		HAL_CASE_SET_PIN_LOW(15,J,0)
+
 		HAL_CASE_SET_PIN_LOW(16,H,1)
+		HAL_CASE_SET_PIN_LOW(17,H,0)
+		HAL_CASE_SET_PIN_LOW(18,D,3)
+		HAL_CASE_SET_PIN_LOW(19,D,2)
+		HAL_CASE_SET_PIN_LOW(20,D,1)
+		HAL_CASE_SET_PIN_LOW(21,D,0)
+		HAL_CASE_SET_PIN_LOW(22,A,0)
+		HAL_CASE_SET_PIN_LOW(23,A,1)
+
+		
 #elif defined(__AVR_ATmega168__) || defined(__AVR_ATmega328__) || defined(__AVR_ATmega328P__)
 		HAL_CASE_SET_PIN_LOW(0,D,0)
 		HAL_CASE_SET_PIN_LOW(1,D,1)
@@ -520,7 +577,17 @@ public:
 		HAL_CASE_READ_PIN(11,B,5)
 		HAL_CASE_READ_PIN(12,B,6)
 		HAL_CASE_READ_PIN(13,B,7)
+		HAL_CASE_READ_PIN(14,J,1)
+		HAL_CASE_READ_PIN(15,J,0)
+
 		HAL_CASE_READ_PIN(16,H,1)
+		HAL_CASE_READ_PIN(17,H,0)
+		HAL_CASE_READ_PIN(18,D,3)
+		HAL_CASE_READ_PIN(19,D,2)
+		HAL_CASE_READ_PIN(20,D,1)
+		HAL_CASE_READ_PIN(21,D,0)
+		HAL_CASE_READ_PIN(22,A,0)
+		HAL_CASE_READ_PIN(23,A,1)
 #elif defined(__AVR_ATmega168__) || defined(__AVR_ATmega328__) || defined(__AVR_ATmega328P__)
 		HAL_CASE_READ_PIN(0,D,0)
 		HAL_CASE_READ_PIN(1,D,1)
@@ -622,7 +689,7 @@ void fastinitPWM(uint8_t pinNum) {
 		//TCCR0B = freq & 0x7;
 		OCR0B = 0;
 #elif defined(__AVR_ATmega1280__) || defined(__AVR_ATmega2560__)
-		// on arduino mega, pin 5 is  PE3 (OC3A)
+		// on arduino mega: PE3 ( OC3A/AIN1 )	Digital pin 5 (PWM)
 		TCCR3A |= _BV(COM3A1) | _BV(WGM10);// fast PWM, turn on oc3a
 		TCCR3B = _BV(CS01) | _BV(WGM12);//8khz
 		OCR3A = 0;
@@ -646,8 +713,8 @@ void fastinitPWM(uint8_t pinNum) {
 #warning  "PWM will not work for pin 6, ocr register raussuchen !"
 
 #elif defined(__AVR_ATmega1280__) || defined(__AVR_ATmega2560__)
-		// on arduino mega, pin 11 is  PH3 (OC4A)
-		TCCR4A |= _BV(COM4A1) | _BV(WGM10);// fast PWM, turn on oc3a
+		//arduino mega: PH3 ( OC4A )	Digital pin 6 (PWM)
+		TCCR4A |= _BV(COM4A1) | _BV(WGM10);// fast PWM, turn on oc4a
 		TCCR4B = _BV(CS01) | _BV(WGM12);//8khz
 		OCR4A = 0;
 
@@ -670,8 +737,8 @@ void fastinitPWM(uint8_t pinNum) {
 #warning  "PWM will not work for pin 3, ocr register raussuchen !"
 
 #elif defined(__AVR_ATmega1280__) || defined(__AVR_ATmega2560__)
-		// on arduino mega, pin 3 is now PE5 (OC3C)
-		TCCR3A |= _BV(COM3C1) | _BV(WGM30);// fast PWM, turn on oc3a
+		// arduino mega: PE5 ( OC3C/INT5 )	Digital pin 3 (PWM)
+		TCCR3A |= _BV(COM3C1) | _BV(WGM30);// fast PWM, turn on oc3c
 		TCCR3B = _BV(CS01) | _BV(WGM32);//8khz
 		OCR3C = 0;
 
@@ -694,8 +761,8 @@ void fastinitPWM(uint8_t pinNum) {
 #warning  "PWM will not work for pin 11, ocr register raussuchen !"
 
 #elif defined(__AVR_ATmega1280__) || defined(__AVR_ATmega2560__)
-		// on arduino mega, pin 11 is now PB5 (OC1A)
-		TCCR1A |= _BV(COM1A1) | _BV(WGM10);// fast PWM, turn on oc3a
+		// arduino mega: PB5 ( OC1A/PCINT5 )	Digital pin 11 (PWM)
+		TCCR1A |= _BV(COM1A1) | _BV(WGM10);// fast PWM, turn on oc1a
 		TCCR1B = _BV(CS01) | _BV(WGM12);//8khz
 		//TCCR4B = 1 | _BV(WGM12);
 		OCR1A = 0;
@@ -705,6 +772,34 @@ void fastinitPWM(uint8_t pinNum) {
 #endif
 
 		break;
+
+	case 10:
+#if defined(__AVR_ATmega8__) || \
+			defined(__AVR_ATmega48__) || \
+			defined(__AVR_ATmega88__) || \
+			defined(__AVR_ATmega168__) || \
+			defined(__AVR_ATmega328P__)
+		// use PWM from timer0B / PD5 (pin 5)
+		TCCR0A |= _BV(COM0B1) | _BV(WGM00) | _BV(WGM01); // fast PWM, turn on oc0a
+		//TCCR0B = freq & 0x7;
+		OCR0B = 0;
+#warning  "PWM will not work for pin 10, ocr register raussuchen !"
+
+#elif defined(__AVR_ATmega1280__) || defined(__AVR_ATmega2560__)
+		// arduino mega: pin 10 is now PB4 (OC2A)
+		TCCR2A |= _BV(COM2A1) | _BV(WGM20);// fast PWM, turn on oc2a
+		TCCR2B = _BV(CS21) | _BV(WGM22);//8khz
+		//TCCR4B = 1 | _BV(WGM12);
+		OCR2A = 0;
+
+#else
+#error "This chip is not supported!"
+#endif
+
+		break;
+
+
+
 	}
 }
 
@@ -723,7 +818,7 @@ void fastsetPWM(uint8_t pinNum, uint8_t s) {
 		// use PWM from timer0A on PB3 (Arduino pin #6)
 		OCR0B = s;
 #elif defined(__AVR_ATmega1280__) || defined(__AVR_ATmega2560__)
-		// on arduino mega, pin 6 is now PH3 (OC4A)
+		//arduino mega: PE3 ( OC3A/AIN1 )	Digital pin 5 (PWM)
 		OCR3A = s;
 #else
 #error "This chip is not supported!"
@@ -742,7 +837,7 @@ void fastsetPWM(uint8_t pinNum, uint8_t s) {
 
 #warning  "PWM will not work for pin 6, ocr register raussuchen !"
 #elif defined(__AVR_ATmega1280__) || defined(__AVR_ATmega2560__)
-		// on arduino mega, pin 6 is now PH3 (OC4A)
+		// on arduino mega: PH3 ( OC4A )	Digital pin 6 (PWM)
 		OCR4A = s;
 #else
 #error "This chip is not supported!"
@@ -760,7 +855,7 @@ void fastsetPWM(uint8_t pinNum, uint8_t s) {
 #warning  "PWM will not work for pin 3, ocr register raussuchen !"
 
 #elif defined(__AVR_ATmega1280__) || defined(__AVR_ATmega2560__)
-		// on arduino mega, pin 6 is now PH3 (OC4A)
+		// on arduino mega: PE5 ( OC3C/INT5 )	Digital pin 3 (PWM)
 		OCR3C = s;
 #else
 #error "This chip is not supported!"
@@ -778,12 +873,32 @@ void fastsetPWM(uint8_t pinNum, uint8_t s) {
 #warning  "PWM will not work for pin 11, ocr register raussuchen !"
 
 #elif defined(__AVR_ATmega1280__) || defined(__AVR_ATmega2560__)
-		// on arduino mega, pin 6 is now PH3 (OC4A)
+		// on arduino mega: PB5 ( OC1A/PCINT5 )	Digital pin 11 (PWM)
 		OCR1A = s;
 #else
 #error "This chip is not supported!"
 #endif
 		break;
+
+	case 10:
+#if defined(__AVR_ATmega8__) || \
+			defined(__AVR_ATmega48__) || \
+			defined(__AVR_ATmega88__) || \
+			defined(__AVR_ATmega168__) || \
+			defined(__AVR_ATmega328P__)
+		// use PWM from timer0A on PB3 (Arduino pin #6)
+		OCR0B = s;
+#warning  "PWM will not work for pin 11, ocr register raussuchen !"
+
+#elif defined(__AVR_ATmega1280__) || defined(__AVR_ATmega2560__)
+		// on arduino mega: PB4 ( OC2A/PCINT4 )	Digital pin 10 (PWM)
+		OCR2A = s;
+#else
+#error "This chip is not supported!"
+#endif
+		break;
+
+
 	}
 }
 
