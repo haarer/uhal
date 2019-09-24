@@ -13,7 +13,8 @@
 #include "HAL/HAL.h"
 
 #include "ShiftRegController.h"
-
+namespace DCMotor
+{
 // Constants that the user passes in to the motor calls
 #define FORWARD 1
 #define BACKWARD 2
@@ -84,6 +85,6 @@ class DCMotor:public DCMotorBase
 
 };
 
-
+}
 
 #endif /* DC_MOTOR_H_ */

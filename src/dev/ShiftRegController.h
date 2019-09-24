@@ -15,6 +15,8 @@
 
 #include "HAL/HAL.h"
 
+using namespace UHAL;
+
 template<uint8_t MLatchPinNumber, uint8_t MClockPinNumber, uint8_t MEnablePinNumber, uint8_t MDataPinNumber>
 class ShiftRegController
 {
