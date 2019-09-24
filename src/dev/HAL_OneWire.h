@@ -39,6 +39,9 @@
 #ifndef HAL_OneWire_h
 #define HAL_OneWire_h
 
+#include "HAL/HAL.h"
+using namespace UHAL;
+
 #include <inttypes.h>
 
 // this would be provided before including, if logging is needed
