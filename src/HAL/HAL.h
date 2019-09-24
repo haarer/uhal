@@ -214,7 +214,13 @@ class HALPin
 public:
 	HALPin()
 	{
-		static_assert(PinNumber <= 20, "Illegal Pin number");
+		#if defined(__AVR_ATmega1280__) || defined(__AVR_ATmega2560__)
+		static_assert(PinNumber <= 23, "Illegal Pin number");
+		#elif defined(__AVR_ATmega168__) || defined(__AVR_ATmega328__) || defined(__AVR_ATmega328P__)
+		static_assert(PinNumber <= 19, "Illegal Pin number");
+		#else
+		#error "unknown platform, fix HAL"
+		#endif
 	}
 
 	inline __attribute__((always_inline)) void mode(uint8_t mode)

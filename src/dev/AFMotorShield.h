@@ -54,10 +54,10 @@ class AFMotorShield
 	public:
 
 		SRC_T src;		
-		DCMotor<MOTOR1_A,MOTOR1_B,PWMPin1_T,SRC_T> m1;
-		DCMotor<MOTOR2_A,MOTOR2_B,PWMPin2_T,SRC_T> m2;
-		DCMotor<MOTOR3_A,MOTOR3_B,PWMPin3_T,SRC_T> m3;
-		DCMotor<MOTOR4_A,MOTOR4_B,PWMPin4_T,SRC_T> m4;
+		DCMotor::DCMotor<MOTOR1_A,MOTOR1_B,PWMPin1_T,SRC_T> m1;
+		DCMotor::DCMotor<MOTOR2_A,MOTOR2_B,PWMPin2_T,SRC_T> m2;
+		DCMotor::DCMotor<MOTOR3_A,MOTOR3_B,PWMPin3_T,SRC_T> m3;
+		DCMotor::DCMotor<MOTOR4_A,MOTOR4_B,PWMPin4_T,SRC_T> m4;
 
 
 	AFMotorShield(void):
