@@ -19,6 +19,9 @@
 #define HAL_H_
 #include <stdint.h>
 
+
+#include "HAL_CPU.h"
+
 #if defined(__AVR__)
 
 // ---------------------------------- AVR specific ------------------------------------------
