@@ -5,10 +5,20 @@
 #ifndef __INTERVALTIMER_H__
 #define __INTERVALTIMER_H__
 
-#include <avr/io.h>
-#include <avr/interrupt.h>
 #define MAXTIMER 65536
 
+#if defined(__AVR__)
+#include "HAL/avr/avr_timer.h"
+
+#include <avr/io.h>
+#include <avr/interrupt.h>
+
+#elif defined (__ESP32__)
+#include "esp32/esp32_timer.h"
+#else
+#error "unknown Platform"
+#endif
+/*
 //fixme handle scale values unknown to scaler
 uint16_t setPreScaler(const uint16_t scale) {
 	uint16_t bitvalue;
@@ -37,12 +47,13 @@ uint16_t setPreScaler(const uint16_t scale) {
 #endif
 	return bitvalue;
 }
-
+*/
 typedef void (*Func)(void);
 
 #define IOPORTS_TO_STRING(name) #name
 #define IOPORTS_IRQ_HANDLER(vector, type) asm(IOPORTS_TO_STRING(vector)) __attribute__ ((type, __INTR_ATTRS))
 
+/*
 #ifdef TCNT1
 class Timer1
 {
@@ -221,7 +232,10 @@ public:
 };
 #endif
 
-template<class T/*,Func _F*/>
+*/
+
+/*
+template<class T>
 class IntervalTimer {
 	uint16_t m_reload;
 	//functions
@@ -251,7 +265,9 @@ private:
 	IntervalTimer(const IntervalTimer &c);
 	IntervalTimer& operator=(const IntervalTimer &c);
 };
+*/
 
+/*
 #ifdef TCCR5A
 template<class T>
 class CaptureTimer
@@ -345,6 +361,6 @@ template<class T> volatile uint32_t CaptureTimer<T>::capture=0;
 	CaptureTimer<Timer5>
 
 #define AVR_INTERVAL_TIMER(_vect,_cb) Func Timer4::fp =0; void Timer4::__vector_handleOverflow(void){  if (fp) fp();} IntervalTimer<Timer4,_cb>
-
+*/
 #endif //__INTERVALTIMER_H__
 

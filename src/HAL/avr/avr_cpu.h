@@ -30,9 +30,9 @@ static_assert(cpu == AVR_ATmega1280, "CPU does not match compiler settings");
 #endif
 #if defined( __AVR_ATmega2560__)
 static_assert(cpu == AVR_ATmega2560, "CPU does not match compiler settings"); 
-#endif
     public:
         static const long ClockMhz = F_CPU;
+#endif
 };
 
 
