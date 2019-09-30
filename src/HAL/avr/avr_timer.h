@@ -65,8 +65,8 @@ public:
 };
 
 
-
-template<class T> static inline void setPrescalerA(const uint16_t scale)
+// off 1 8 32 64 128 256 1024
+template<class T> static inline void setPreScalerA(const uint16_t scale)
 {
         T::clrTCCRB((1<<CS22)|   (1<<CS21)|  (1<<CS20));
         if(scale==1)    T::setTCCRB(                          (1<<CS20));
@@ -78,6 +78,7 @@ template<class T> static inline void setPrescalerA(const uint16_t scale)
         if(scale==1024) T::setTCCRB( (1<<CS22)|   (1<<CS21)|  (1<<CS20));
 }
 
+// off 1 8 64 256 1024 inputfall inputraise
 template<class T> static inline void setPreScalerB(const uint16_t scale)
 {
         T::clrTCCRB((1<<CS22)|   (1<<CS21)|  (1<<CS20));
@@ -91,6 +92,22 @@ template<class T> static inline void setPreScalerB(const uint16_t scale)
 }
 
 
+template<> class AVRTimer<0>
+{
+public:
+#if defined( TCNT0)
+    static const int TimerBits=8;
+	static void TCNT(uint16_t _v){TCNT0 = _v;}
+	static void TCCRA(uint8_t _v){TCCR0A = _v;}
+	static void TCCRB(uint8_t _v){TCCR0B = _v;}
+	static void setTCCRB(uint8_t _v){TCCR0B |= _v;}
+	static void clrTCCRB(uint8_t _v){TCCR0B &=  ~ _v;}
+	static void setTIMSK(uint8_t _v){TIMSK0 |= _v;}
+	static void clrTIMSK(uint8_t _v){TIMSK0 &= _v;}
+    static void setPreScaler(const uint16_t scale) { setPreScalerB<  AVRTimer<0>>(scale);} // off 1 8 64 256 1024 inputfall inputraise
+#endif
+};
+
 template<> class AVRTimer<1>
 {
 public:
@@ -103,6 +120,7 @@ public:
 	static void clrTCCRB(uint8_t _v){TCCR1B &=  ~ _v;}
 	static void setTIMSK(uint8_t _v){TIMSK1 |= _v;}
 	static void clrTIMSK(uint8_t _v){TIMSK1 &= _v;}
+    static void setPreScaler(const uint16_t scale) { setPreScalerB<  AVRTimer<1>>(scale);} // off 1 8 64 256 1024 inputfall inputraise
 #endif
 };
 
@@ -118,7 +136,7 @@ public:
 	static void clrTCCRB(uint8_t _v){TCCR2B &=  ~ _v;}
 	static void setTIMSK(uint8_t _v){TIMSK2 |= _v;}
 	static void clrTIMSK(uint8_t _v){TIMSK2 &= _v;}
-    static void setPreScaler(const uint16_t scale) { setPrescalerA<  AVRTimer<2>>(scale);}
+    static void setPreScaler(const uint16_t scale) { setPreScalerA<  AVRTimer<2>>(scale);} // off 1 8 32 64 128 256 1024
 #endif
 };
 
@@ -134,6 +152,7 @@ public:
 	static void clrTCCRB(uint8_t _v){TCCR3B &=  ~ _v;}
 	static void setTIMSK(uint8_t _v){TIMSK3 |= _v;}
 	static void clrTIMSK(uint8_t _v){TIMSK3 &= _v;}
+    static void setPreScaler(const uint16_t scale) { setPreScalerB<  AVRTimer<3>>(scale);} // off 1 8 64 256 1024 inputfall inputraise
 #endif
 };
 
@@ -149,6 +168,8 @@ public:
 	static void clrTCCRB(uint8_t _v){TCCR4B &=  ~ _v;}
 	static void setTIMSK(uint8_t _v){TIMSK4 |= _v;}
 	static void clrTIMSK(uint8_t _v){TIMSK4 &= _v;}
+    static void setPreScaler(const uint16_t scale) { setPreScalerB<  AVRTimer<4>>(scale);} // off 1 8 64 256 1024 inputfall inputraise
+
 #endif
 };
 
@@ -164,7 +185,7 @@ public:
 	static void clrTCCRB(uint8_t _v){TCCR5B &=  ~ _v;}
     static void setTIMSK(uint8_t _v){TIMSK5 |= _v;}
 	static void clrTIMSK(uint8_t _v){TIMSK5 &= _v;}
-    static void setPreScaler(const uint16_t scale) { setPreScalerB<AVRTimer<5>>(scale);}
+    static void setPreScaler(const uint16_t scale) { setPreScalerB<AVRTimer<5>>(scale);} // off 1 8 64 256 1024 inputfall inputraise
 #endif
 };
 
