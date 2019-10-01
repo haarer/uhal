@@ -22,8 +22,9 @@
 
 #include "HAL_CPU.h"
 
-#if defined(__AVR__)
+#include "HAL_Pin.h"
 
+#if defined(__AVR__)
 // ---------------------------------- AVR specific ------------------------------------------
 #include <avr/io.h>
 #include <avr/interrupt.h>
@@ -46,12 +47,6 @@
 
 namespace UHAL
 {
-
-	static const uint8_t INPUT = 0x0;
-	static const uint8_t OUTPUT = 0x1;
-	static const uint8_t INPUT_PULLUP = 0x2;
-	static const uint8_t HIGH = 0x1;
-	static const uint8_t LOW = 0x0;
 
 
 template <uint8_t PinNumber>
@@ -534,11 +529,54 @@ public:
 
 //helper to init pwm capable pins
 
-template<uint8_t pinNum> void tmplInitPWM(void)
+
+
+template<uint8_t pinNum> void tmplSetPWM(uint8_t s){}
+
+
+
+template <uint8_t PinNum>
+class HALPWMPin : public HALPin<PinNum>
 {
-	static_assert(pinNum ==3 ||pinNum ==5 ||pinNum ==6 || pinNum ==10 || pinNum ==11 ,   "PWM Pin not implemented");
+public:
+	HALPWMPin(){};
+	inline __attribute__((always_inline)) void setPWM(uint8_t s);
+
+	inline __attribute__((always_inline)) void initPWM(void)
+	{
+		static_assert(PinNum ==3 ||PinNum ==5 ||PinNum ==6 || PinNum ==10 || PinNum ==11 ,   "PWM Pin not implemented");
+	}
+
+	inline __attribute__((always_inline)) void stopPWM(void);
+};
+
+
+
+template<> void HALPWMPin<3>::stopPWM(void)
+{
+#if defined(__AVR_ATmega8__) ||   \
+	defined(__AVR_ATmega48__) ||  \
+	defined(__AVR_ATmega88__) ||  \
+	defined(__AVR_ATmega168__) || \
+	defined(__AVR_ATmega328P__)
+		// use PWM from timer0B / PD5 (pin 5)
+		TCCR0A |= _BV(COM0B1) | _BV(WGM00) | _BV(WGM01); // fast PWM, turn on oc0a
+		//TCCR0B = freq & 0x7;
+		OCR0B = 0;
+#warning "PWM will not work for pin 3, ocr register raussuchen !"
+
+#elif defined(__AVR_ATmega1280__) || defined(__AVR_ATmega2560__)
+		// arduino mega: PE5 ( OC3C/INT5 )	Digital pin 3 (PWM)
+		TCCR3A &=  ~ _BV(COM3C1);//turn off oc3c
+//		TCCR3B = _BV(CS01) | _BV(WGM32);	//8khz
+//		OCR3C = 0;
+
+#else
+#error "This chip is not supported!"
+#endif
 }
-template<> void tmplInitPWM<3>(void)
+
+template<> void HALPWMPin<3>::initPWM(void)
 {
 #if defined(__AVR_ATmega8__) ||   \
 	defined(__AVR_ATmega48__) ||  \
@@ -562,7 +600,7 @@ template<> void tmplInitPWM<3>(void)
 #endif
 };
 
-template<> inline __attribute__((always_inline)) void tmplInitPWM<5>(void)
+template<> inline __attribute__((always_inline)) void HALPWMPin<5>::initPWM(void)
 {
 #if defined(__AVR_ATmega8__) || defined(__AVR_ATmega48__) || defined(__AVR_ATmega88__) || defined(__AVR_ATmega168__) || defined(__AVR_ATmega328P__)
 		// use PWM from timer0B / PD5 (pin 5)
@@ -579,7 +617,7 @@ template<> inline __attribute__((always_inline)) void tmplInitPWM<5>(void)
 #endif
 };
 
-template<> void tmplInitPWM<6>(void)
+template<> void HALPWMPin<6>::initPWM(void)
 {
 #if defined(__AVR_ATmega8__) ||   \
 	defined(__AVR_ATmega48__) ||  \
@@ -603,7 +641,7 @@ template<> void tmplInitPWM<6>(void)
 #endif
 };
 
-template<> void tmplInitPWM<10>(void)
+template<> void HALPWMPin<10>::initPWM(void)
 {
 #if defined(__AVR_ATmega8__) ||   \
 	defined(__AVR_ATmega48__) ||  \
@@ -628,7 +666,7 @@ template<> void tmplInitPWM<10>(void)
 #endif
 };
 
-template<> void tmplInitPWM<11>(void)
+template<> void HALPWMPin<11>::initPWM(void)
 {
 #if defined(__AVR_ATmega8__) ||   \
 	defined(__AVR_ATmega48__) ||  \
@@ -654,9 +692,7 @@ template<> void tmplInitPWM<11>(void)
 };
 
 
-template<uint8_t pinNum> void tmplSetPWM(uint8_t s){}
-
-template<> inline __attribute__((always_inline)) void tmplSetPWM<3>(uint8_t s)
+template<> inline __attribute__((always_inline)) void HALPWMPin<3>::setPWM(uint8_t s)
 {
 #if defined(__AVR_ATmega8__) ||   \
 	defined(__AVR_ATmega48__) ||  \
@@ -675,7 +711,7 @@ template<> inline __attribute__((always_inline)) void tmplSetPWM<3>(uint8_t s)
 #endif
 }
 
-template<> inline __attribute__((always_inline)) void tmplSetPWM<5>(uint8_t s)
+template<> inline __attribute__((always_inline)) void HALPWMPin<5>::setPWM(uint8_t s)
 {
 #if defined(__AVR_ATmega8__) ||   \
 	defined(__AVR_ATmega48__) ||  \
@@ -692,7 +728,7 @@ template<> inline __attribute__((always_inline)) void tmplSetPWM<5>(uint8_t s)
 #endif
 };
 
-template<> inline __attribute__((always_inline)) void tmplSetPWM<6>(uint8_t s)
+template<> inline __attribute__((always_inline)) void HALPWMPin<6>::setPWM(uint8_t s)
 {
 #if defined(__AVR_ATmega8__) ||   \
 	defined(__AVR_ATmega48__) ||  \
@@ -712,7 +748,7 @@ template<> inline __attribute__((always_inline)) void tmplSetPWM<6>(uint8_t s)
 }
 
 
-template<> inline __attribute__((always_inline)) void tmplSetPWM<10>(uint8_t s)
+template<> inline __attribute__((always_inline)) void HALPWMPin<10>::setPWM(uint8_t s)
 {
 #if defined(__AVR_ATmega8__) ||   \
 	defined(__AVR_ATmega48__) ||  \
@@ -731,7 +767,7 @@ template<> inline __attribute__((always_inline)) void tmplSetPWM<10>(uint8_t s)
 #endif
 };
 
-template<> inline __attribute__((always_inline)) void tmplSetPWM<11>(uint8_t s)
+template<> inline __attribute__((always_inline)) void HALPWMPin<11>::setPWM(uint8_t s)
 {
 #if defined(__AVR_ATmega8__) ||   \
 	defined(__AVR_ATmega48__) ||  \
@@ -750,246 +786,7 @@ template<> inline __attribute__((always_inline)) void tmplSetPWM<11>(uint8_t s)
 #endif
 };
 
-/*
-static inline __attribute__((always_inline)) void fastinitPWM(uint8_t pinNum)
-{
-	switch (pinNum)
-	{
 
-	case 5:
-#if defined(__AVR_ATmega8__) || defined(__AVR_ATmega48__) || defined(__AVR_ATmega88__) || defined(__AVR_ATmega168__) || defined(__AVR_ATmega328P__)
-		// use PWM from timer0B / PD5 (pin 5)
-		TCCR0A |= _BV(COM0B1) | _BV(WGM00) | _BV(WGM01); // fast PWM, turn on oc0a
-		//TCCR0B = freq & 0x7;
-		OCR0B = 0;
-#elif defined(__AVR_ATmega1280__) || defined(__AVR_ATmega2560__)
-		// on arduino mega: PE3 ( OC3A/AIN1 )	Digital pin 5 (PWM)
-		TCCR3A |= _BV(COM3A1) | _BV(WGM10); // fast PWM, turn on oc3a
-		TCCR3B = _BV(CS01) | _BV(WGM12);	//8khz
-		OCR3A = 0;
-
-#else
-#error "This chip is not supported!"
-#endif
-
-		break;
-
-	case 6:
-#if defined(__AVR_ATmega8__) ||   \
-	defined(__AVR_ATmega48__) ||  \
-	defined(__AVR_ATmega88__) ||  \
-	defined(__AVR_ATmega168__) || \
-	defined(__AVR_ATmega328P__)
-		// use PWM from timer0B / PD5 (pin 5)
-		TCCR0A |= _BV(COM0B1) | _BV(WGM00) | _BV(WGM01); // fast PWM, turn on oc0a
-		//TCCR0B = freq & 0x7;
-		OCR0B = 0;
-#warning "PWM will not work for pin 6, ocr register raussuchen !"
-
-#elif defined(__AVR_ATmega1280__) || defined(__AVR_ATmega2560__)
-		//arduino mega: PH3 ( OC4A )	Digital pin 6 (PWM)
-		TCCR4A |= _BV(COM4A1) | _BV(WGM10); // fast PWM, turn on oc4a
-		TCCR4B = _BV(CS01) | _BV(WGM12);	//8khz
-		OCR4A = 0;
-
-#else
-#error "This chip is not supported!"
-#endif
-
-		break;
-
-	case 3:
-#if defined(__AVR_ATmega8__) ||   \
-	defined(__AVR_ATmega48__) ||  \
-	defined(__AVR_ATmega88__) ||  \
-	defined(__AVR_ATmega168__) || \
-	defined(__AVR_ATmega328P__)
-		// use PWM from timer0B / PD5 (pin 5)
-		TCCR0A |= _BV(COM0B1) | _BV(WGM00) | _BV(WGM01); // fast PWM, turn on oc0a
-		//TCCR0B = freq & 0x7;
-		OCR0B = 0;
-#warning "PWM will not work for pin 3, ocr register raussuchen !"
-
-#elif defined(__AVR_ATmega1280__) || defined(__AVR_ATmega2560__)
-		// arduino mega: PE5 ( OC3C/INT5 )	Digital pin 3 (PWM)
-		TCCR3A |= _BV(COM3C1) | _BV(WGM30); // fast PWM, turn on oc3c
-		TCCR3B = _BV(CS01) | _BV(WGM32);	//8khz
-		OCR3C = 0;
-
-#else
-#error "This chip is not supported!"
-#endif
-
-		break;
-
-	case 11:
-#if defined(__AVR_ATmega8__) ||   \
-	defined(__AVR_ATmega48__) ||  \
-	defined(__AVR_ATmega88__) ||  \
-	defined(__AVR_ATmega168__) || \
-	defined(__AVR_ATmega328P__)
-		// use PWM from timer0B / PD5 (pin 5)
-		TCCR0A |= _BV(COM0B1) | _BV(WGM00) | _BV(WGM01); // fast PWM, turn on oc0a
-		//TCCR0B = freq & 0x7;
-		OCR0B = 0;
-#warning "PWM will not work for pin 11, ocr register raussuchen !"
-
-#elif defined(__AVR_ATmega1280__) || defined(__AVR_ATmega2560__)
-		// arduino mega: PB5 ( OC1A/PCINT5 )	Digital pin 11 (PWM)
-		TCCR1A |= _BV(COM1A1) | _BV(WGM10); // fast PWM, turn on oc1a
-		TCCR1B = _BV(CS01) | _BV(WGM12);	//8khz
-		//TCCR4B = 1 | _BV(WGM12);
-		OCR1A = 0;
-
-#else
-#error "This chip is not supported!"
-#endif
-
-		break;
-
-	case 10:
-#if defined(__AVR_ATmega8__) ||   \
-	defined(__AVR_ATmega48__) ||  \
-	defined(__AVR_ATmega88__) ||  \
-	defined(__AVR_ATmega168__) || \
-	defined(__AVR_ATmega328P__)
-		// use PWM from timer0B / PD5 (pin 5)
-		TCCR0A |= _BV(COM0B1) | _BV(WGM00) | _BV(WGM01); // fast PWM, turn on oc0a
-		//TCCR0B = freq & 0x7;
-		OCR0B = 0;
-#warning "PWM will not work for pin 10, ocr register raussuchen !"
-
-#elif defined(__AVR_ATmega1280__) || defined(__AVR_ATmega2560__)
-		// arduino mega: pin 10 is now PB4 (OC2A)
-		TCCR2A |= _BV(COM2A1) | _BV(WGM20); // fast PWM, turn on oc2a
-		TCCR2B = _BV(CS21) | _BV(WGM22);	//8khz
-		//TCCR4B = 1 | _BV(WGM12);
-		OCR2A = 0;
-
-#else
-#error "This chip is not supported!"
-#endif
-
-		break;
-	}
-}
-
-//helper to set pwm capable pins
-static inline __attribute__((always_inline)) void fastsetPWM(uint8_t pinNum, uint8_t s)
-{
-	switch (pinNum)
-	{
-
-	case 5:
-
-#if defined(__AVR_ATmega8__) ||   \
-	defined(__AVR_ATmega48__) ||  \
-	defined(__AVR_ATmega88__) ||  \
-	defined(__AVR_ATmega168__) || \
-	defined(__AVR_ATmega328P__)
-		// use PWM from timer0A on PB3 (Arduino pin #6)
-		OCR0B = s;
-#elif defined(__AVR_ATmega1280__) || defined(__AVR_ATmega2560__)
-		//arduino mega: PE3 ( OC3A/AIN1 )	Digital pin 5 (PWM)
-		OCR3A = s;
-#else
-#error "This chip is not supported!"
-#endif
-
-		break;
-
-	case 6:
-#if defined(__AVR_ATmega8__) ||   \
-	defined(__AVR_ATmega48__) ||  \
-	defined(__AVR_ATmega88__) ||  \
-	defined(__AVR_ATmega168__) || \
-	defined(__AVR_ATmega328P__)
-		// use PWM from timer0A on PB3 (Arduino pin #6)
-		OCR0B = s;
-
-#warning "PWM will not work for pin 6, ocr register raussuchen !"
-#elif defined(__AVR_ATmega1280__) || defined(__AVR_ATmega2560__)
-		// on arduino mega: PH3 ( OC4A )	Digital pin 6 (PWM)
-		OCR4A = s;
-#else
-#error "This chip is not supported!"
-#endif
-		break;
-
-	case 3:
-#if defined(__AVR_ATmega8__) ||   \
-	defined(__AVR_ATmega48__) ||  \
-	defined(__AVR_ATmega88__) ||  \
-	defined(__AVR_ATmega168__) || \
-	defined(__AVR_ATmega328P__)
-		// use PWM from timer0A on PB3 (Arduino pin #6)
-		OCR0B = s;
-#warning "PWM will not work for pin 3, ocr register raussuchen !"
-
-#elif defined(__AVR_ATmega1280__) || defined(__AVR_ATmega2560__)
-		// on arduino mega: PE5 ( OC3C/INT5 )	Digital pin 3 (PWM)
-		OCR3C = s;
-#else
-#error "This chip is not supported!"
-#endif
-		break;
-
-	case 11:
-#if defined(__AVR_ATmega8__) ||   \
-	defined(__AVR_ATmega48__) ||  \
-	defined(__AVR_ATmega88__) ||  \
-	defined(__AVR_ATmega168__) || \
-	defined(__AVR_ATmega328P__)
-		// use PWM from timer0A on PB3 (Arduino pin #6)
-		OCR0B = s;
-#warning "PWM will not work for pin 11, ocr register raussuchen !"
-
-#elif defined(__AVR_ATmega1280__) || defined(__AVR_ATmega2560__)
-		// on arduino mega: PB5 ( OC1A/PCINT5 )	Digital pin 11 (PWM)
-		OCR1A = s;
-#else
-#error "This chip is not supported!"
-#endif
-		break;
-
-	case 10:
-#if defined(__AVR_ATmega8__) ||   \
-	defined(__AVR_ATmega48__) ||  \
-	defined(__AVR_ATmega88__) ||  \
-	defined(__AVR_ATmega168__) || \
-	defined(__AVR_ATmega328P__)
-		// use PWM from timer0A on PB3 (Arduino pin #6)
-		OCR0B = s;
-#warning "PWM will not work for pin 11, ocr register raussuchen !"
-
-#elif defined(__AVR_ATmega1280__) || defined(__AVR_ATmega2560__)
-		// on arduino mega: PB4 ( OC2A/PCINT4 )	Digital pin 10 (PWM)
-		OCR2A = s;
-#else
-#error "This chip is not supported!"
-#endif
-		break;
-	}
-}
-*/
-template <uint8_t PinNum>
-class HALPWMPin : public HALPin<PinNum>
-{
-public:
-	HALPWMPin(){};
-	inline __attribute__((always_inline)) void setPWM(uint8_t s)
-	{
-		tmplSetPWM<PinNum>(s);
-//		fastsetPWM(PinNum, s);
-	}
-
-	inline __attribute__((always_inline)) void initPWM(void)
-	{
-		tmplInitPWM<PinNum>();
-//		fastinitPWM(PinNum);
-	}
-};
-
-}
+}//namespace UHAL
 
 #endif /* HAL_H_ */

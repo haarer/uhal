@@ -3,9 +3,7 @@
 #define HAL_CPU_H_
 namespace UHAL
 {
-    typedef enum {ARCH_AVR,ARCH_ESP32}arch_type;
-
-template<arch_type,typename CPUType, CPUType cpu>class GenericCPU{};
+    template< auto cpu>class GenericCPU;
 }
 
 #if defined(__AVR__)
