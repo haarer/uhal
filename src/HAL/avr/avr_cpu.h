@@ -32,13 +32,14 @@ namespace UHAL
         #if defined( __AVR_ATmega1280__)
             static_assert(cpu == AVR_ATmega1280, "CPU does not match compiler settings");
         #endif
-        
+
         #if defined( __AVR_ATmega2560__)
             static_assert(cpu == AVR_ATmega2560, "CPU does not match compiler settings"); 
             public:
                 static const long ClockMhz = F_CPU;
                 typedef  enum {
-                    PIN_PE0=2, PIN_PE1=3, PIN_PE2=4, PIN_PE3=5, PIN_PE4=6, PIN_PE5=7, PIN_PE6=8, PIN_PE7=9
+                    PIN_PE0=2, PIN_PE1=3, PIN_PE2=4, PIN_PE3=5, PIN_PE4=6, PIN_PE5=7, PIN_PE6=8, PIN_PE7=9,
+                    PIN_PG5=1
                 }cpu_pins;
     #endif
     };
