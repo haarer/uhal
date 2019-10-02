@@ -17,9 +17,9 @@ namespace UHAL
     AVR_ATmega2560,
     AVR_ATmega2561}avr_cpu_type;
 
-    template<auto cpu> struct pins;
+    template<auto cpu> struct cpu_pins;
 
-    template<> struct pins<AVR_ATmega1281> //FIXME: this depends on the package type, assumed tqfp 64
+    template<> struct cpu_pins<AVR_ATmega1281> //FIXME: this depends on the package type, assumed tqfp 64
     {
         typedef  enum {
                     PIN_PE0=2,  PIN_PE1=3,  PIN_PE2=4,  PIN_PE3=5,  PIN_PE4=6,  PIN_PE5=7,  PIN_PE6=8,  PIN_PE7=9,
@@ -32,7 +32,7 @@ namespace UHAL
                 }pin_type;
     };
 
-    template<> struct pins<AVR_ATmega2561> //FIXME: this depends on the package type, assumed tqfp 64
+    template<> struct cpu_pins<AVR_ATmega2561> //FIXME: this depends on the package type, assumed tqfp 64
     {
         typedef  enum {
                     PIN_PE0=2,  PIN_PE1=3,  PIN_PE2=4,  PIN_PE3=5,  PIN_PE4=6,  PIN_PE5=7,  PIN_PE6=8,  PIN_PE7=9,
@@ -45,7 +45,7 @@ namespace UHAL
                 }pin_type;
     };
 
-    template<> struct pins<AVR_ATmega2560> //FIXME: this depends on the package type, assumed tqfp 100
+    template<> struct cpu_pins<AVR_ATmega2560> //FIXME: this depends on the package type, assumed tqfp 100
     {
         typedef  enum {
                     PIN_PA0=78, PIN_PA1=77, PIN_PA2=76, PIN_PA3=75, PIN_PA4=74, PIN_PA5=73, PIN_PA6=72, PIN_PA7=71,                    
@@ -61,7 +61,7 @@ namespace UHAL
                     PIN_PL0=35, PIN_PL1=36, PIN_PL2=37, PIN_PL3=38, PIN_PL4=39, PIN_PL5=40, PIN_PL6=41, PIN_PL7=42,
                 }pin_type;
     };    
-    template<> struct pins<AVR_ATmega328P> //FIXME: this depends on the package type, assumed tqfp 32
+    template<> struct cpu_pins<AVR_ATmega328P> //FIXME: this depends on the package type, assumed tqfp 32
     {
                 typedef  enum {
                     PIN_PC0=23, PIN_PC1=24, PIN_PC2=25, PIN_PC3=26, PIN_PC4=27, PIN_PC5=28, PIN_PC6=29,
@@ -74,7 +74,7 @@ namespace UHAL
     {
         public:
             static const long ClockMhz = F_CPU;
-                typedef typename pins<cpu>::pin_type cpu_pins; //FIXME: this depends on the package type
+                typedef typename cpu_pins<cpu>::pin_type cpu_pins; //FIXME: this depends on the package type
 
     };
 

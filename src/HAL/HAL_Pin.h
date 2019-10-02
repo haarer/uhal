@@ -15,7 +15,7 @@ namespace UHAL
 	static const uint8_t HIGH = 0x1;
 	static const uint8_t LOW = 0x0;
 
-template<auto cpu,int PinNumber>class GenericPin{
+template</*auto cpu,*/int PinNumber>class GenericPin{
 public:
 	GenericPin()
 	{};
