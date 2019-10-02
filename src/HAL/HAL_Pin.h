@@ -1,4 +1,4 @@
-#ifndef HALK_PIN_H_
+#ifndef HAL_PIN_H_
 #define HAL_PIN_H_
 
 #include <stdint.h>
@@ -34,13 +34,13 @@ public:
 			break;
 		}
     }
-	inline __attribute__((always_inline)) void modeOut(void);
-	inline __attribute__((always_inline)) void modeIn(void);
-	inline __attribute__((always_inline)) void modeInPullup(void);
-	inline __attribute__((always_inline)) void writeHigh(void);
-	inline __attribute__((always_inline)) void writeLow(void);
+	inline __attribute__((always_inline)) void modeOut(void) const;
+	inline __attribute__((always_inline)) void modeIn(void) const;
+	inline __attribute__((always_inline)) void modeInPullup(void)const; 
+	inline __attribute__((always_inline)) void writeHigh(void) const;
+	inline __attribute__((always_inline)) void writeLow(void) const;
 	inline __attribute__((always_inline)) bool readState(void) const;
-	inline __attribute__((always_inline)) void write(bool value)
+	inline __attribute__((always_inline)) void write(bool value) 
     {
     switch (value)
 		{

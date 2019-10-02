@@ -3,7 +3,14 @@
 #define HAL_CPU_H_
 namespace UHAL
 {
-    template< auto cpu>class GenericCPU;
+
+    typedef enum {
+        PKG_TQFP32,
+        PKG_TQFP64,
+        PKG_TQFP100,
+        PKG_DIL28}package_type;
+
+    template< auto cpu, package_type pkg>class GenericCPU;
 }
 
 #if defined(__AVR__)

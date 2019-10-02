@@ -6,20 +6,25 @@
 #endif
 
 #include <util/delay.h>
+
+#include "../HAL_Pin.h"
 namespace UHAL
 {
     typedef enum {
-    AVR_ATmega168,
-    AVR_ATmega328,
-    AVR_ATmega328P,
-    AVR_ATmega1280,
-    AVR_ATmega1281,
-    AVR_ATmega2560,
-    AVR_ATmega2561}avr_cpu_type;
+        AVR_ATmega168,
+        AVR_ATmega328,
+        AVR_ATmega328P,
+        AVR_ATmega1280,
+        AVR_ATmega1281,
+        AVR_ATmega2560,
+        AVR_ATmega2561}avr_cpu_type;
 
-    template<auto cpu> struct cpu_pins;
 
-    template<> struct cpu_pins<AVR_ATmega1281> //FIXME: this depends on the package type, assumed tqfp 64
+    template<auto cpu,package_type pkg> struct cpu_pins;
+
+    template<auto cpu,package_type pkg> struct cpu_pin_list;
+
+    template<> struct cpu_pins<AVR_ATmega1281,PKG_TQFP64> //FIXME: this depends on the package type, assumed tqfp 64
     {
         typedef  enum {
                     PIN_PE0=2,  PIN_PE1=3,  PIN_PE2=4,  PIN_PE3=5,  PIN_PE4=6,  PIN_PE5=7,  PIN_PE6=8,  PIN_PE7=9,
@@ -32,7 +37,7 @@ namespace UHAL
                 }pin_type;
     };
 
-    template<> struct cpu_pins<AVR_ATmega2561> //FIXME: this depends on the package type, assumed tqfp 64
+    template<> struct cpu_pins<AVR_ATmega2561,PKG_TQFP64> //FIXME: this depends on the package type, assumed tqfp 64
     {
         typedef  enum {
                     PIN_PE0=2,  PIN_PE1=3,  PIN_PE2=4,  PIN_PE3=5,  PIN_PE4=6,  PIN_PE5=7,  PIN_PE6=8,  PIN_PE7=9,
@@ -45,7 +50,7 @@ namespace UHAL
                 }pin_type;
     };
 
-    template<> struct cpu_pins<AVR_ATmega2560> //FIXME: this depends on the package type, assumed tqfp 100
+    template<> struct cpu_pins<AVR_ATmega2560,PKG_TQFP100> //FIXME: this depends on the package type, assumed tqfp 100
     {
         typedef  enum {
                     PIN_PA0=78, PIN_PA1=77, PIN_PA2=76, PIN_PA3=75, PIN_PA4=74, PIN_PA5=73, PIN_PA6=72, PIN_PA7=71,                    
@@ -61,7 +66,7 @@ namespace UHAL
                     PIN_PL0=35, PIN_PL1=36, PIN_PL2=37, PIN_PL3=38, PIN_PL4=39, PIN_PL5=40, PIN_PL6=41, PIN_PL7=42,
                 }pin_type;
     };    
-    template<> struct cpu_pins<AVR_ATmega328P> //FIXME: this depends on the package type, assumed tqfp 32
+    template<> struct cpu_pins<AVR_ATmega328P,PKG_TQFP32> //FIXME: this depends on the package type, assumed tqfp 32
     {
                 typedef  enum {
                     PIN_PC0=23, PIN_PC1=24, PIN_PC2=25, PIN_PC3=26, PIN_PC4=27, PIN_PC5=28, PIN_PC6=29,
@@ -70,13 +75,126 @@ namespace UHAL
                 }pin_type;
     };
 
-    template< avr_cpu_type cpu> class GenericCPU< cpu>
+    template<> struct cpu_pins<AVR_ATmega328P,PKG_DIL28> //FIXME: this depends on the package type, assumed tqfp 32
+    {
+                typedef  enum {
+                    PIN_PB0=14, PIN_PB1=15, PIN_PB2=16, PIN_PB3=17, PIN_PB4=18, PIN_PB5=19, PIN_PB6=9, PIN_PB7=10,
+                    PIN_PC0=23, PIN_PC1=24, PIN_PC2=25, PIN_PC3=26, PIN_PC4=27, PIN_PC5=28, PIN_PC6=1,
+                    PIN_PD0=2,  PIN_PD1=3,  PIN_PD2=4,  PIN_PD3=5,  PIN_PD4=6,  PIN_PD5=11, PIN_PD6=12, PIN_PD7=13,
+                }pin_type;
+    };
+
+    template<> struct cpu_pin_list<AVR_ATmega328P,PKG_DIL28> //FIXME: this depends on the package type, assumed tqfp 32
+    {
+        GenericPin<avr_pin_type::PIN_PB7> pb7;
+        GenericPin<avr_pin_type::PIN_PC5> pc5;
+    };
+
+
+
+
+    template<> struct cpu_pin_list<AVR_ATmega2560,PKG_TQFP100> 
+    {
+GenericPin<avr_pin_type::PIN_PA0> pa0;
+GenericPin<avr_pin_type::PIN_PA1> pa1;
+GenericPin<avr_pin_type::PIN_PA2> pa2;
+GenericPin<avr_pin_type::PIN_PA3> pa3;
+GenericPin<avr_pin_type::PIN_PA4> pa4;
+GenericPin<avr_pin_type::PIN_PA5> pa5;
+GenericPin<avr_pin_type::PIN_PA6> pa6;
+GenericPin<avr_pin_type::PIN_PA7> pa7;
+GenericPin<avr_pin_type::PIN_PB0> pb0;
+GenericPin<avr_pin_type::PIN_PB1> pb1;
+GenericPin<avr_pin_type::PIN_PB2> pb2;
+GenericPin<avr_pin_type::PIN_PB3> pb3;
+GenericPin<avr_pin_type::PIN_PB4> pb4;
+GenericPin<avr_pin_type::PIN_PB5> pb5;
+GenericPin<avr_pin_type::PIN_PB6> pb6;
+GenericPin<avr_pin_type::PIN_PB7> pb7;
+GenericPin<avr_pin_type::PIN_PC0> pc0;
+GenericPin<avr_pin_type::PIN_PC1> pc1;
+GenericPin<avr_pin_type::PIN_PC2> pc2;
+GenericPin<avr_pin_type::PIN_PC3> pc3;
+GenericPin<avr_pin_type::PIN_PC4> pc4;
+GenericPin<avr_pin_type::PIN_PC5> pc5;
+GenericPin<avr_pin_type::PIN_PC6> pc6;
+GenericPin<avr_pin_type::PIN_PC7> pc7;
+GenericPin<avr_pin_type::PIN_PD0> pd0;
+GenericPin<avr_pin_type::PIN_PD1> pd1;
+GenericPin<avr_pin_type::PIN_PD2> pd2;
+GenericPin<avr_pin_type::PIN_PD3> pd3;
+GenericPin<avr_pin_type::PIN_PD4> pd4;
+GenericPin<avr_pin_type::PIN_PD5> pd5;
+GenericPin<avr_pin_type::PIN_PD6> pd6;
+GenericPin<avr_pin_type::PIN_PD7> pd7;
+GenericPin<avr_pin_type::PIN_PE0> pe0;
+GenericPin<avr_pin_type::PIN_PE1> pe1;
+GenericPin<avr_pin_type::PIN_PE2> pe2;
+GenericPin<avr_pin_type::PIN_PE3> pe3;
+GenericPin<avr_pin_type::PIN_PE4> pe4;
+GenericPin<avr_pin_type::PIN_PE5> pe5;
+GenericPin<avr_pin_type::PIN_PE6> pe6;
+GenericPin<avr_pin_type::PIN_PE7> pe7;
+GenericPin<avr_pin_type::PIN_PF0> pf0;
+GenericPin<avr_pin_type::PIN_PF1> pf1;
+GenericPin<avr_pin_type::PIN_PF2> pf2;
+GenericPin<avr_pin_type::PIN_PF3> pf3;
+GenericPin<avr_pin_type::PIN_PF4> pf4;
+GenericPin<avr_pin_type::PIN_PF5> pf5;
+GenericPin<avr_pin_type::PIN_PF6> pf6;
+GenericPin<avr_pin_type::PIN_PF7> pf7;
+GenericPin<avr_pin_type::PIN_PG0> pg0;
+GenericPin<avr_pin_type::PIN_PG1> pg1;
+GenericPin<avr_pin_type::PIN_PG2> pg2;
+GenericPin<avr_pin_type::PIN_PG3> pg3;
+GenericPin<avr_pin_type::PIN_PG4> pg4;
+GenericPin<avr_pin_type::PIN_PG5> pg5;
+
+GenericPin<avr_pin_type::PIN_PH0> ph0;
+GenericPin<avr_pin_type::PIN_PH1> ph1;
+GenericPin<avr_pin_type::PIN_PH2> ph2;
+GenericPin<avr_pin_type::PIN_PH3> ph3;
+GenericPin<avr_pin_type::PIN_PH4> ph4;
+GenericPin<avr_pin_type::PIN_PH5> ph5;
+GenericPin<avr_pin_type::PIN_PH6> ph6;
+GenericPin<avr_pin_type::PIN_PH7> ph7;
+GenericPin<avr_pin_type::PIN_PJ0> pj0;
+GenericPin<avr_pin_type::PIN_PJ1> pj1;
+GenericPin<avr_pin_type::PIN_PJ2> pj2;
+GenericPin<avr_pin_type::PIN_PJ3> pj3;
+GenericPin<avr_pin_type::PIN_PJ4> pj4;
+GenericPin<avr_pin_type::PIN_PJ5> pj5;
+GenericPin<avr_pin_type::PIN_PJ6> pj6;
+GenericPin<avr_pin_type::PIN_PJ7> pj7;
+GenericPin<avr_pin_type::PIN_PK0> pk0;
+GenericPin<avr_pin_type::PIN_PK1> pk1;
+GenericPin<avr_pin_type::PIN_PK2> pk2;
+GenericPin<avr_pin_type::PIN_PK3> pk3;
+GenericPin<avr_pin_type::PIN_PK4> pk4;
+GenericPin<avr_pin_type::PIN_PK5> pk5;
+GenericPin<avr_pin_type::PIN_PK6> pk6;
+GenericPin<avr_pin_type::PIN_PK7> pk7;
+GenericPin<avr_pin_type::PIN_PL0> pl0;
+GenericPin<avr_pin_type::PIN_PL1> pl1;
+GenericPin<avr_pin_type::PIN_PL2> pl2;
+GenericPin<avr_pin_type::PIN_PL3> pl3;
+GenericPin<avr_pin_type::PIN_PL4> pl4;
+GenericPin<avr_pin_type::PIN_PL5> pl5;
+GenericPin<avr_pin_type::PIN_PL6> pl6;
+GenericPin<avr_pin_type::PIN_PL7> pl7;
+    };
+    
+    template< auto cpu, package_type pkg> class GenericCPU
     {
         public:
             static const long ClockMhz = F_CPU;
-                typedef typename cpu_pins<cpu>::pin_type cpu_pins; //FIXME: this depends on the package type
+            typedef typename cpu_pins<cpu, pkg>::pin_type cpu_pins; //FIXME: this depends on the package type
+            cpu_pin_list<cpu, pkg> pins;
+            
 
     };
+
+
 
 }
 #endif // avrcpzu
