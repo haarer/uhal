@@ -68,12 +68,11 @@
 template <class T>
 class DallasTemperature
 {
-	const T m_p_wire;
-
+	const T& m_p_wire;
+	const bool parasite;
 	typedef uint8_t ScratchPad[9];
 
-	// parasite power on or off
-	bool parasite;
+
 
 	// used to determine the delay amount needed to allow for the
 	// temperature conversion to take place
@@ -88,9 +87,9 @@ public:
 	// used to requestTemperature with or without delay
 	bool waitForConversion;
 
-	DallasTemperature(const T _p_wire):m_p_wire(_p_wire)
+	DallasTemperature(const T& _p_wire):m_p_wire(_p_wire),parasite(_p_wire.parasite)
 	{
-		parasite = false;
+		
 		//bitResolution = 9;
 		waitForConversion = true;
 		checkForConversion = true;
@@ -134,7 +133,7 @@ public:
 	}
 
 	bool isConversionComplete() {
-		uint8_t b = m_p_wire->read_bit();
+		uint8_t b = m_p_wire.read_bit();
 		return (b == 1);
 	}
 	// Continue to check if the IC has responded with a temperature
@@ -172,12 +171,12 @@ public:
 			uint8_t* scratchPad) {
 
 		// send the reset command and fail fast
-		int b = m_p_wire->reset();
+		int b = m_p_wire.reset();
 		if (b == 0)
 			return false;
 
-		m_p_wire->select(deviceAddress);
-		m_p_wire->write(READSCRATCH);
+		m_p_wire.select(deviceAddress);
+		m_p_wire.write(READSCRATCH);
 
 		// Read all registers in a simple loop
 		// byte 0: temperature LSB
@@ -193,10 +192,10 @@ public:
 		//         DS18B20 & DS1822: store for crc
 		// byte 8: SCRATCHPAD_CRC
 		for (uint8_t i = 0; i < 9; i++) {
-			scratchPad[i] = m_p_wire->read();
+			scratchPad[i] = m_p_wire.read();
 		}
 
-		b = m_p_wire->reset();
+		b = m_p_wire.reset();
 		return (b == 1);
 	}
 
@@ -245,11 +244,11 @@ public:
 		}
 
 		LogSubSys(DALLASTEMP,"reset");
-		m_p_wire->reset();
+		m_p_wire.reset();
 		LogSubSys(DALLASTEMP,"select");
-		m_p_wire->select(deviceAddress);
+		m_p_wire.select(deviceAddress);
 		LogSubSys(DALLASTEMP,"startconv");
-		m_p_wire->write(STARTCONVO, parasite);
+		m_p_wire.write(STARTCONVO);
 
 		// ASYNC mode?
 		LogSubSys(DALLASTEMP,"wait");

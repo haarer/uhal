@@ -72,8 +72,8 @@ typedef struct OneWireAddress {
 #define FALSE 0
 #define TRUE  1
 
-template<uint8_t PinNumber>
-class OneWire: public HALPin<PinNumber> {
+template<class PinType>
+class OneWire{
 private:
 
 #if ONEWIRE_SEARCH
@@ -83,10 +83,12 @@ private:
 	uint8_t LastFamilyDiscrepancy;
 	uint8_t LastDeviceFlag;
 #endif
-
+	const PinType& onewirepin;
 public:
-	OneWire(void) {
-		static_cast<HALPin<PinNumber>*>(this)->modeIn();
+	const bool parasite;
+
+	OneWire(PinType pin,bool _parasite=true) :onewirepin(pin),parasite(_parasite){
+		onewirepin.modeIn();
 #if ONEWIRE_SEARCH
 		reset_search();
 #endif
@@ -94,38 +96,38 @@ public:
 	// Perform a 1-Wire reset cycle. Returns 1 if a device responds
 	// with a presence pulse.  Returns 0 if there is no device or the
 	// bus is shorted or otherwise held low for more than 250uS
-	uint8_t reset(void) {
+	uint8_t reset(void) const {
 		LogSubSys(ONEWIRE,"%s\n", __PRETTY_FUNCTION__ );
 
 		uint8_t r;
 		uint8_t retries = 125;
 
 		BEGIN_CRITICAL_SECTION();
-		static_cast<HALPin<PinNumber>*>(this)->modeIn();
+		onewirepin.modeIn();
 		END_CRITICAL_SECTION();
 		// wait until the wire is high... just in case
 		do {
 			if (--retries == 0)
 				return 0;
 			delayMicroseconds(2);
-		} while (! static_cast<HALPin<PinNumber>*>(this)->read() );
+		} while (! onewirepin.read() );
 
 		BEGIN_CRITICAL_SECTION();
-		static_cast<HALPin<PinNumber>*>(this)->write(LOW);
-		static_cast<HALPin<PinNumber>*>(this)->modeOut();	// drive output low
+		onewirepin.write(LOW);
+		onewirepin.modeOut();	// drive output low
 		END_CRITICAL_SECTION();
 		delayMicroseconds(480);
 		BEGIN_CRITICAL_SECTION();
-		static_cast<HALPin<PinNumber>*>(this)->modeIn();	// allow it to float
+		onewirepin.modeIn();	// allow it to float
 		delayMicroseconds(70);
-		r = ! static_cast<HALPin<PinNumber>*>(this)->read();
+		r = ! onewirepin.read();
 		END_CRITICAL_SECTION();
 		delayMicroseconds(410);
 		return r;
 	}
 
 	// Issue a 1-Wire rom select command, you do the reset first.
-	void select(const OneWireAddress rom) {
+	void select (const OneWireAddress rom) const {
 		LogSubSys(ONEWIRE,"%s\n", __PRETTY_FUNCTION__ );
 		uint8_t i;
 
@@ -136,7 +138,7 @@ public:
 	}
 
 	// Issue a 1-Wire rom skip command, to address all on bus.
-	void skip(void) {
+	void skip(void) const{
 		write(0xCC);           // Skip ROM
 	}
 
@@ -144,35 +146,35 @@ public:
 	// the end for parasitically powered devices. You are responsible
 	// for eventually depowering it by calling depower() or doing
 	// another read or write.
-	void write(uint8_t v, uint8_t power = 0) {
+	void write (uint8_t v) const {
 		LogSubSys(ONEWIRE,"%s\n", __PRETTY_FUNCTION__ );
 		uint8_t bitMask;
 
 		for (bitMask = 0x01; bitMask; bitMask <<= 1) {
 			OneWire::write_bit((bitMask & v) ? 1 : 0);
 		}
-		if (!power) {
+		if (!parasite) {
 			BEGIN_CRITICAL_SECTION();
-			static_cast<HALPin<PinNumber>*>(this)->modeIn();
-			static_cast<HALPin<PinNumber>*>(this)->writeLow();
+			onewirepin.modeIn();
+			onewirepin.writeLow();
 			END_CRITICAL_SECTION();
 		}
 	}
 
-	void write_bytes(const uint8_t *buf, uint16_t count, bool power = 0) {
+	void write_bytes(const uint8_t *buf, uint16_t count) const{
 		LogSubSys(ONEWIRE,"%s\n", __PRETTY_FUNCTION__ );
 		for (uint16_t i = 0; i < count; i++)
 			write(buf[i]);
-		if (!power) {
+		if (!parasite) {
 			BEGIN_CRITICAL_SECTION();
-			static_cast<HALPin<PinNumber>*>(this)->modeIn();
-			static_cast<HALPin<PinNumber>*>(this)->writeLow();
+			onewirepin.modeIn();
+			onewirepin.writeLow();
 			END_CRITICAL_SECTION();
 		}
 	}
 
 	// Read a byte.
-	uint8_t read(void) {
+	uint8_t read(void) const{
 		LogSubSys(ONEWIRE,"%s\n", __PRETTY_FUNCTION__ );
 		uint8_t bitMask;
 		uint8_t r = 0;
@@ -184,7 +186,7 @@ public:
 		return r;
 	}
 
-	void read_bytes(uint8_t *buf, uint16_t count) {
+	void read_bytes(uint8_t *buf, uint16_t count) const{
 		LogSubSys(ONEWIRE,"%s\n", __PRETTY_FUNCTION__ );
 		for (uint16_t i = 0; i < count; i++)
 			buf[i] = read();
@@ -192,38 +194,38 @@ public:
 
 	// Write a bit. The bus is always left powered at the end, see
 	// note in write() about that.
-	void write_bit(uint8_t v) {
+	void write_bit(uint8_t v) const {
 		LogSubSys(ONEWIRE,"%s\n", __PRETTY_FUNCTION__ );
 		if (v & 1) {
 			BEGIN_CRITICAL_SECTION();
-			static_cast<HALPin<PinNumber>*>(this)->writeLow();
-			static_cast<HALPin<PinNumber>*>(this)->modeOut();	// drive output low
+			onewirepin.writeLow();
+			onewirepin.modeOut();	// drive output low
 			delayMicroseconds(10);
-			static_cast<HALPin<PinNumber>*>(this)->writeHigh();	// drive output high
+			onewirepin.writeHigh();	// drive output high
 			END_CRITICAL_SECTION();
 			delayMicroseconds(55);
 		} else {
 			BEGIN_CRITICAL_SECTION();
-			static_cast<HALPin<PinNumber>*>(this)->writeLow();
-			static_cast<HALPin<PinNumber>*>(this)->modeOut();	// drive output low
+			onewirepin.writeLow();
+			onewirepin.modeOut();	// drive output low
 			delayMicroseconds(65);
-			static_cast<HALPin<PinNumber>*>(this)->writeHigh();		// drive output high
+			onewirepin.writeHigh();		// drive output high
 			END_CRITICAL_SECTION();
 			delayMicroseconds(5);
 		}
 	}
 	// Read a bit.
-	uint8_t read_bit(void) {
+	uint8_t read_bit(void) const {
 		//LogSubSys(ONEWIRE,"%s\n", __PRETTY_FUNCTION__ );
 		uint8_t r;
 
 		BEGIN_CRITICAL_SECTION();
-		static_cast<HALPin<PinNumber>*>(this)->modeOut();
-		static_cast<HALPin<PinNumber>*>(this)->writeLow();
+		onewirepin.modeOut();
+		onewirepin.writeLow();
 		delayMicroseconds(3);
-		static_cast<HALPin<PinNumber>*>(this)->modeIn();	// let pin float, pull up will raise
+		onewirepin.modeIn();	// let pin float, pull up will raise
 		delayMicroseconds(10);
-		r = static_cast<HALPin<PinNumber>*>(this)->read();
+		r = onewirepin.read();
 		//r = this->read(); this would select the wrong read and recurse :)
 		END_CRITICAL_SECTION();
 		delayMicroseconds(53);
@@ -235,10 +237,10 @@ public:
 	// and aren't about to do another read or write. You would rather
 	// not leave this powered if you don't have to, just in case
 	// someone shorts your bus.
-	void depower(void) {
+	void depower(void) const{
 		LogSubSys(ONEWIRE,"%s\n", __PRETTY_FUNCTION__ );
 		BEGIN_CRITICAL_SECTION();
-		static_cast<HALPin<PinNumber>*>(this)->modeIn();
+		onewirepin.modeIn();
 		END_CRITICAL_SECTION();
 	}
 
@@ -259,7 +261,7 @@ public:
 
 	// Setup the search to find the device type 'family_code' on the next call
 	// to search(*newAddr) if it is present.
-	void target_search(uint8_t family_code)
+	void target_search(uint8_t family_code) 
 
 	{
 		LogSubSys(ONEWIRE,"%s\n", __PRETTY_FUNCTION__ );
@@ -278,7 +280,7 @@ public:
 	// might be a good idea to check the CRC to make sure you didn't
 	// get garbage.  The order is deterministic. You will always get
 	// the same devices in the same order.
-	uint8_t search(OneWireAddress &newAddr, bool search_mode = true)
+	uint8_t search(OneWireAddress &newAddr, bool search_mode = true) 
 
 	{
 		LogSubSys(ONEWIRE,"%s\n", __PRETTY_FUNCTION__ );
