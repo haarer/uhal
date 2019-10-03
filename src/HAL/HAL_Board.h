@@ -13,9 +13,9 @@ namespace UHAL
     ArduinoUno,
     ArduinoMega2560}board_type;
 
-    template< board_type board>class GenericBoard{};
+    template< board_type board>struct GenericBoard{};
 
-    template<> class GenericBoard<ArduinoMega2560>
+    template<> struct GenericBoard<ArduinoMega2560>
     {
         public:
 
@@ -110,35 +110,34 @@ namespace UHAL
 
 
     };
-    template<> class GenericBoard<ArduinoUno> // FIXME: enable override of default cpu in template
+    template<> struct GenericBoard<ArduinoUno> // FIXME: enable override of default cpu in template
     {
         public:
             static const GenericCPU<AVR_ATmega328P,PKG_DIL28> cpu;
-            //https://www.arduino.cc/en/Hacking/PinMapping168
-            using atmega328pins= GenericCPU<AVR_ATmega328P,PKG_DIL28>::cpu_pins;
-            BoardPin<atmega328pins::PIN_PD0>::type pin0; // RX
-            BoardPin<atmega328pins::PIN_PD1>::type pin1; // TX
-            BoardPin<atmega328pins::PIN_PD2>::type pin2; // 
-            BoardPin<atmega328pins::PIN_PD3>::type pin3; // OC2B
-            BoardPin<atmega328pins::PIN_PD4>::type pin4; //
+/*
+            static auto constexpr&  pin0 = cpu.pins.pd0; // RX
+            static auto constexpr&  pin1 = cpu.pins.pd1; // TX
+            static auto constexpr&  pin2 = cpu.pins.pd2; // 
+            static auto constexpr& pin3 = cpu.pins.pd3; // OC2B
+            static auto constexpr&  pin4 = cpu.pins.pd4; //
 
-            BoardPin<atmega328pins::PIN_PD5>::type pin5; // OC0B
-            BoardPin<atmega328pins::PIN_PD6>::type pin6; // OC0A
-            BoardPin<atmega328pins::PIN_PD7>::type pin7; // 
-            BoardPin<atmega328pins::PIN_PB0>::type pin8; // 
-            BoardPin<atmega328pins::PIN_PB1>::type pin9; // OC1A
-            BoardPin<atmega328pins::PIN_PB2>::type pin10; //OC1B SS 
-            BoardPin<atmega328pins::PIN_PB3>::type pin11; //OC2A MOSI 
-            BoardPin<atmega328pins::PIN_PB4>::type pin12; //MISO 
-            BoardPin<atmega328pins::PIN_PB5>::type pin13; //SCK 
+            static auto constexpr& pin5 = cpu.pins.pd5; // OC0B
+            static auto constexpr&  pin6 = cpu.pins.pd6; // OC0A
+            static auto constexpr& pin7 = cpu.pins.pd7; // 
+            static auto constexpr&  pin8 = cpu.pins.pb0; // 
+            static auto constexpr&  pin9 = cpu.pins.pb1; // OC1A
+            static auto constexpr&  pin10 = cpu.pins.pb2; //OC1B SS 
+            static auto constexpr&  pin11 = cpu.pins.pb3; //OC2A MOSI 
+            static auto constexpr&  pin12 = cpu.pins.pb4; //MISO 
+            static auto constexpr& pin13 = cpu.pins.pb5; //SCK 
 
-            BoardPin<atmega328pins::PIN_PC0>::type apin0; // 
-            BoardPin<atmega328pins::PIN_PC1>::type apin1; // 
-            BoardPin<atmega328pins::PIN_PC2>::type apin2; // 
-            BoardPin<atmega328pins::PIN_PC3>::type apin3; // 
-            BoardPin<atmega328pins::PIN_PC4>::type apin4; // SDA
-            BoardPin<atmega328pins::PIN_PC5>::type apin5; // SCL
-
+            static auto constexpr&  apin0 = cpu.pins.pc9; // 
+            static auto constexpr&  apin1 = cpu.pins.pc1; // 
+            static auto constexpr&  apin2 = cpu.pins.pc2; // 
+            static auto constexpr&  apin3 = cpu.pins.pc3; // 
+            static auto constexpr&  apin4 = cpu.pins.pc4; // SDA
+            static auto constexpr&  apin5 = cpu.pins.pc5; // SCL
+*/
     };
 
 
