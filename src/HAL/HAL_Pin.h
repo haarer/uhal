@@ -19,7 +19,7 @@ template</*auto cpu,*/int PinNumber>class GenericPin{
 public:
 	GenericPin()
 	{};
-	inline __attribute__((always_inline)) void mode(uint8_t mode)
+	inline __attribute__((always_inline)) void mode(uint8_t mode) const
     {
     	switch (mode)
 		{
@@ -40,7 +40,7 @@ public:
 	inline __attribute__((always_inline)) void writeHigh(void) const;
 	inline __attribute__((always_inline)) void writeLow(void) const;
 	inline __attribute__((always_inline)) bool readState(void) const;
-	inline __attribute__((always_inline)) void write(bool value) 
+	inline __attribute__((always_inline)) void write(bool value) const
     {
     switch (value)
 		{

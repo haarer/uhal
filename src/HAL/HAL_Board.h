@@ -57,6 +57,10 @@ namespace UHAL
             static auto constexpr& pin44 = cpu.pins.pl5; // OC5C
             static auto constexpr& pin43 = cpu.pins.pl6; // 
             static auto constexpr& pin42 = cpu.pins.pl7; //
+            static auto constexpr& pin21 = cpu.pins.pd0; //
+            static auto constexpr& pin20 = cpu.pins.pd1; //
+            static auto constexpr& pin19 = cpu.pins.pd2; //
+            static auto constexpr& pin18 = cpu.pins.pd3; //
             //PD4
             //PD5
             //PD6
