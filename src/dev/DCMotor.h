@@ -29,19 +29,16 @@ class DCMotorBase
 
 };
 
-template<uint8_t APinNumber, uint8_t BPinNumber,class HPin, class  Tsrc >
+template<uint8_t APinNumber, uint8_t BPinNumber, auto &PWMPin,typename T>
 class DCMotor:public DCMotorBase
 {
 	uint8_t motornum;
-	Tsrc*  src;
-	HPin PWMPin;
-
+    T& src;
 	public:
-	DCMotor(HPin _pwmpin,Tsrc* _src):src(_src),PWMPin(_pwmpin)
-	{
+	DCMotor(T& p_src):src(p_src){
 		//printf("DCMotor()\n");
-		src->latch_state &= ~_BV(APinNumber) & ~_BV(BPinNumber); // set both motor pins to 0
-		src->latch_tx();
+		src.latch_state &= ~_BV(APinNumber) & ~_BV(BPinNumber); // set both motor pins to 0
+		src.latch_tx();
 		
 		PWMPin.mode(OUTPUT);
 		PWMPin.write(HIGH);
@@ -53,33 +50,32 @@ class DCMotor:public DCMotorBase
 
 		switch (cmd) {
 			case FORWARD:
-			//printf("fwd %02x\n",src->latch_state);
-			src->latch_state |= _BV(APinNumber);
-			//printf("fwd %02x\n",src->latch_state);
-			src->latch_state &= ~_BV(BPinNumber);
-			src->latch_tx();
+			//printf("fwd %02x\n",src.latch_state);
+			src.latch_state |= _BV(APinNumber);
+			//printf("fwd %02x\n",src.latch_state);
+			src.latch_state &= ~_BV(BPinNumber);
+			src.latch_tx();
 			break;
 			
 			case BACKWARD:
-			//printf("rev %02x\n",src->latch_state);
-			src->latch_state &= ~_BV(APinNumber);
-			//printf("rev %02x\n",src->latch_state);
-			src->latch_state |= _BV(BPinNumber);
-			src->latch_tx();
+			//printf("rev %02x\n",src.latch_state);
+			src.latch_state &= ~_BV(APinNumber);
+			//printf("rev %02x\n",src.latch_state);
+			src.latch_state |= _BV(BPinNumber);
+			src.latch_tx();
 			break;
 			
 			case RELEASE:
 			//printf("off\n");
-			src->latch_state &= ~_BV(APinNumber);     // A and B both low
-			src->latch_state &= ~_BV(BPinNumber);
-			src->latch_tx();
+			src.latch_state &= ~_BV(APinNumber);     // A and B both low
+			src.latch_state &= ~_BV(BPinNumber);
+			src.latch_tx();
 			break;
 		}
 	}
 	
 	void setSpeed(uint8_t speed) {
 			PWMPin.setPWM(speed);
-
 	}
 
 

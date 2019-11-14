@@ -17,18 +17,15 @@
 
 using namespace UHAL;
 
-template<uint8_t MLatchPinNumber, uint8_t MClockPinNumber, uint8_t MEnablePinNumber, uint8_t MDataPinNumber>
+template<auto &MotorLatchPin,auto &MotorEnablePin,auto &MotorDataPin, auto &MotorClkPin>
 class ShiftRegController
 {
-	
-	HALPin<MLatchPinNumber> MotorLatchPin;
-	HALPin<MClockPinNumber> MotorClkPin;
-	HALPin<MEnablePinNumber> MotorEnablePin;
-	HALPin<MDataPinNumber> MotorDataPin;
 
 	public:
-	 uint8_t latch_state;
-	ShiftRegController(void){
+	uint8_t latch_state;
+
+	ShiftRegController(void)
+	{
 		//printf("ShiftRegController()\n");
 		MotorLatchPin.mode(OUTPUT);
 		MotorEnablePin.mode(OUTPUT);

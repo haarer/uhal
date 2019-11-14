@@ -44,7 +44,7 @@
 
 #include "HAL_Timer.h"
 
-
+/*
 namespace UHAL
 {
 
@@ -512,24 +512,6 @@ public:
 	}
 };
 
-/* arduino mega <timer> <port> <arduino pin>
- TIMER3B	, // PE 4 ** 2 ** PWM2
- TIMER3C	, // PE 5 ** 3 ** PWM3
- TIMER0B	, // PG 5 ** 4 ** PWM4
- TIMER3A	, // PE 3 ** 5 ** PWM5
- TIMER4A	, // PH 3 ** 6 ** PWM6
- TIMER4B	, // PH 4 ** 7 ** PWM7
- TIMER4C	, // PH 5 ** 8 ** PWM8
- TIMER2B	, // PH 6 ** 9 ** PWM9
- TIMER2A	, // PB 4 ** 10 ** PWM10
- TIMER1A	, // PB 5 ** 11 ** PWM11
- TIMER1B	, // PB 6 ** 12 ** PWM12
- TIMER0A	, // PB 7 ** 13 ** PWM13
- */
-
-//helper to init pwm capable pins
-
-
 
 template<uint8_t pinNum> void tmplSetPWM(uint8_t s){}
 
@@ -786,7 +768,7 @@ template<> inline __attribute__((always_inline)) void HALPWMPin<11>::setPWM(uint
 #endif
 };
 
-
 }//namespace UHAL
+*/
 
 #endif /* HAL_H_ */

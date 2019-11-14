@@ -16,10 +16,6 @@
 #include "HAL/HAL.h"
 
 
-const uint8_t MOTORLATCH=12;
-const uint8_t MOTORCLK=4;
-const uint8_t MOTORENABLE=7;
-const uint8_t MOTORDATA=8;
 
 // Bit positions in the 74HCT595 shift register output
 #define MOTOR1_A 2
@@ -33,41 +29,34 @@ const uint8_t MOTORDATA=8;
 
 
 
-using SRC_T = ShiftRegController< MOTORLATCH,MOTORCLK,MOTORENABLE,MOTORDATA>;
-
-
-using PWMPin1_T = HALPWMPin<11>;
-using PWMPin2_T = HALPWMPin<3>;
-using PWMPin3_T = HALPWMPin<6>;
-using PWMPin4_T = HALPWMPin<5>; // dies steuert Motor 4 und das ist pin 1 des L293D
-
-//#define _BV(b) (1UL << (b))
-
-
+template<auto board>
 class AFMotorShield
 {
-								
-		PWMPin1_T PWMPinM1;
-		PWMPin2_T PWMPinM2;
-		PWMPin3_T PWMPinM3;
-		PWMPin4_T PWMPinM4;	
+					
+		ShiftRegController<board.pin12,board.pin7,board.pin8,board.pin4> src;	
+
+		const uint8_t MOTORLATCH=12;
+		const uint8_t MOTORENABLE=7;
+		const uint8_t MOTORDATA=8;
+		const uint8_t MOTORCLK=4;
 	public:
 
-		SRC_T src;		
-		DCMotor::DCMotor<MOTOR1_A,MOTOR1_B,PWMPin1_T,SRC_T> m1;
-		DCMotor::DCMotor<MOTOR2_A,MOTOR2_B,PWMPin2_T,SRC_T> m2;
-		DCMotor::DCMotor<MOTOR3_A,MOTOR3_B,PWMPin3_T,SRC_T> m3;
-		DCMotor::DCMotor<MOTOR4_A,MOTOR4_B,PWMPin4_T,SRC_T> m4;
+			
+		DCMotor::DCMotor<MOTOR1_A,MOTOR1_B,board.pin11,decltype(src)> m1;
+		DCMotor::DCMotor<MOTOR2_A,MOTOR2_B,board.pin3,decltype(src)> m2;
+		DCMotor::DCMotor<MOTOR3_A,MOTOR3_B,board.pin6,decltype(src)> m3;
+		DCMotor::DCMotor<MOTOR4_A,MOTOR4_B,board.pin5,decltype(src)> m4;
 
 
 	AFMotorShield(void):
-		m1(PWMPinM1,&src),
-		m2(PWMPinM2,&src),
-		m3(PWMPinM3,&src),
-		m4(PWMPinM4,&src)
+		src(),
+		m1(src),
+		m2(src),
+		m3(src),
+		m4(src)
 	{
 		//printf("AFMotorShield()\n");
-		src.init();
+		//src.init(); // part of constructor anyway
 	}
 };
 

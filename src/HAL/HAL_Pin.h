@@ -78,6 +78,22 @@ template<int PinNumber> inline bool GenericPin<PinNumber>::read(void) {
 		return readState();
 }
 
+
+template <uint8_t PinNum>
+class GenericPWMPin : public GenericPin<PinNum>
+{
+public:
+	GenericPWMPin(){};
+	inline __attribute__((always_inline)) void setPWM(uint8_t s);
+
+	inline __attribute__((always_inline)) void initPWM(void);
+
+	inline __attribute__((always_inline)) void stopPWM(void);
+};
+
+
+
+
 }//namespace uhal
 
 #if defined(__AVR__)
