@@ -12,6 +12,7 @@
 
 #if ( defined  (__AVR_ATtiny2313__) || defined (__AVR_ATtiny4313__) || \
 	  defined (__AVR_ATmega32__) || \
+	  defined( __AVR_ATmega48__) || defined( __AVR_ATmega48PA__) || defined( __AVR_ATmega48A__) ||\
 	  defined( __AVR_ATmega168__) || defined( __AVR_ATmega168PA__) || defined( __AVR_ATmega168A__) ||\
 	  defined(__AVR_ATmega328P__) || defined(__AVR_ATmega328__) ||\
 	  defined( __AVR_ATmega2560__) )
