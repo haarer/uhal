@@ -13,7 +13,7 @@ namespace UHAL
     ArduinoUno,
     ArduinoMega2560}board_type;
 
-    template< board_type board>struct GenericBoard{};
+    template< auto board>struct GenericBoard{};
 
     template<> struct GenericBoard<ArduinoMega2560>
     {

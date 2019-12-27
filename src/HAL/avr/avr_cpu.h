@@ -90,6 +90,37 @@ namespace UHAL
         static GenericPin<avr_pin_type::PIN_PC5> pc5;
     };
 
+    template<> struct cpu_pin_list<AVR_ATmega168,PKG_TQFP32> //FIXME: this depends on the package type, assumed tqfp 32
+    {
+static GenericPin<avr_pin_type::PIN_PB0> pb0;
+static GenericPin<avr_pin_type::PIN_PB1> pb1;
+static GenericPWMPin<avr_pin_type::PIN_PB2> pb2;
+static GenericPWMPin<avr_pin_type::PIN_PB3> pb3;
+static GenericPin<avr_pin_type::PIN_PB4> pb4;
+static GenericPin<avr_pin_type::PIN_PB5> pb5;
+static GenericPin<avr_pin_type::PIN_PB6> pb6;
+static GenericPin<avr_pin_type::PIN_PB7> pb7;
+
+static GenericPin<avr_pin_type::PIN_PC0> pc0;
+static GenericPin<avr_pin_type::PIN_PC1> pc1;
+static GenericPin<avr_pin_type::PIN_PC2> pc2;
+static GenericPin<avr_pin_type::PIN_PC3> pc3;
+static GenericPin<avr_pin_type::PIN_PC4> pc4;
+static GenericPin<avr_pin_type::PIN_PC5> pc5;
+static GenericPin<avr_pin_type::PIN_PC6> pc6;
+
+static GenericPin<avr_pin_type::PIN_PD0> pd0;
+static GenericPin<avr_pin_type::PIN_PD1> pd1;
+static GenericPin<avr_pin_type::PIN_PD2> pd2;
+static GenericPin<avr_pin_type::PIN_PD3> pd3;
+static GenericPin<avr_pin_type::PIN_PD4> pd4;
+static GenericPin<avr_pin_type::PIN_PD5> pd5;
+static GenericPin<avr_pin_type::PIN_PD6> pd6;
+static GenericPin<avr_pin_type::PIN_PD7> pd7;
+
+
+    };
+
 
 
 

@@ -20,16 +20,16 @@ public:
 	GenericPin()
 	{};
 	static inline void mode(uint8_t mode) ;
-	static inline __attribute__((always_inline)) void modeOut(void) ;
-	static inline __attribute__((always_inline)) void modeIn(void) ;
-	static inline __attribute__((always_inline)) void modeInPullup(void); 
-	static inline __attribute__((always_inline)) void writeHigh(void) ;
-	static inline __attribute__((always_inline)) void writeLow(void) ;
+	static inline const __attribute__((always_inline)) void modeOut(void) ;
+	static inline const __attribute__((always_inline)) void modeIn(void) ;
+	static inline const __attribute__((always_inline)) void modeInPullup(void); 
+	static inline const __attribute__((always_inline)) void writeHigh(void) ;
+	static inline const __attribute__((always_inline)) void writeLow(void) ;
 	static inline __attribute__((always_inline)) bool readState(void) ;
 	static inline __attribute__((always_inline)) void write(bool value) ;
 	static inline __attribute__((always_inline)) bool read(void) ;
 
-	inline GenericPin &operator=(bool value)
+	inline GenericPin &operator=(const bool value)
    	{
 		if (value)
 			writeHigh();

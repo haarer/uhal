@@ -4,18 +4,19 @@ import os,string
 avr168portset=['B','C','D']
 avr2560portset=['A','B','C','D','E','F','G','H','J','K','L']
 cpupins={
+    "__AVR_ATmega168__":avr168portset,
     "__AVR_ATmega168P__":avr168portset,
     "__AVR_ATmega328P__":avr168portset,
     "__AVR_ATmega2560__":avr2560portset,
     "__AVR_ATmega1280__":avr2560portset}
 
 def printPinFunc(f,port,bit):
-    f.write("template<> void ::UHAL::GenericPin< avr_pin_type::PIN_P%s%s>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		%s,%s)}\n" % (port,bit,port,bit))
-    f.write("template<> void ::UHAL::GenericPin< avr_pin_type::PIN_P%s%s>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		%s,%s)}\n" % (port,bit,port,bit))
-    f.write("template<> void ::UHAL::GenericPin< avr_pin_type::PIN_P%s%s>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	%s,%s)}\n" % (port,bit,port,bit))
-    f.write("template<> void ::UHAL::GenericPin< avr_pin_type::PIN_P%s%s>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		%s,%s)}\n" % (port,bit,port,bit))
-    f.write("template<> void ::UHAL::GenericPin< avr_pin_type::PIN_P%s%s>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		%s,%s)}\n" % (port,bit,port,bit))
-    f.write("template<> bool ::UHAL::GenericPin< avr_pin_type::PIN_P%s%s>::readState(void)    	 	{HAL_AVR_READ_PIN(		    %s,%s)}\n" % (port,bit,port,bit))
+    f.write("template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_P%s%s>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		%s,%s)}\n" % (port,bit,port,bit))
+    f.write("template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_P%s%s>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		%s,%s)}\n" % (port,bit,port,bit))
+    f.write("template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_P%s%s>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	%s,%s)}\n" % (port,bit,port,bit))
+    f.write("template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_P%s%s>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		%s,%s)}\n" % (port,bit,port,bit))
+    f.write("template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_P%s%s>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		%s,%s)}\n" % (port,bit,port,bit))
+    f.write("template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_P%s%s>::readState(void)    	 	{HAL_AVR_READ_PIN(		    %s,%s)}\n" % (port,bit,port,bit))
 
 def printCPUPortset(f,cpuset):
     for p in cpuset:
