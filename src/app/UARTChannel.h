@@ -97,18 +97,13 @@ private:
 	 unsigned char UART_RxTail;
 	 unsigned char UART_LastRxError;
 
-
-
 	uint32_t last_byte_time;
 
-	//fixme: this should be the message size determined by a header, but we use ascii and 0x0d termination
-	//uint8_t msgsize = sizeof(rx_buf) - 1;
 
 	uint32_t timeout = 1000; //ms
 	// receive and transmit
 
 	UARTChannel();
-
 
 protected:
 	inline __attribute__((always_inline))
@@ -291,20 +286,20 @@ public:
 	void send(const uint8_t* p_data, size_t length) {
 
 		//clear txcomplete
-
 		onFunc();
+		_delay_us(1000000/57600 * 8 ); //8 bits delay @ 57600  = 139 us
 		while (length != 0) {
 
 			UARTClass::CLEAR_TX_COMPLETE();
 			UARTClass::WAIT_EMPTY_TX();
 			UARTClass::SET_SEND_DATA(*p_data);
 			UARTClass::WAIT_FOR_TX_COMPLETE();
-
+			_delay_us(1000000/57600 * 3 );
 			length--;
 			p_data++;
 		}
 
-		_delay_us(500); //8 bits delay @ 57600 * 3 = 432 us
+		_delay_us(1000000/57600 * 8 ); //8 bits delay @ 57600  = 139 us
 		offFunc();
 
 	}
