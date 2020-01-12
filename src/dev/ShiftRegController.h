@@ -12,6 +12,9 @@
 #ifndef SHIFTREGCONTROLLER_H_
 #define SHIFTREGCONTROLLER_H_
 
+#ifndef _BV
+#define _BV(bit) (1 << (bit))
+#endif
 
 #include "HAL/HAL.h"
 

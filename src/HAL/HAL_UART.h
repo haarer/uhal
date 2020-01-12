@@ -161,8 +161,11 @@ static inline __attribute__((always_inline)) void WAIT_FOR_TX_COMPLETE(void)
 };
 
 #endif
-
+#elif defined(STM32F1)
+#warning "NO UART support for this architecture"
 #else
+
+
 #error "HAL not defined for this architecture"
 #endif
 

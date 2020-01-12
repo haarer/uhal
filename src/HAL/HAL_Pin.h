@@ -100,6 +100,8 @@ public:
 #include "avr/avr_pin.h"
 #elif defined (__ESP32__)
 #include "esp32/esp32_pin.h"
+#elif defined (STM32F1)
+#include "stm32/stm32_pin.h"
 #else
 #error "unknown Platform"
 #endif

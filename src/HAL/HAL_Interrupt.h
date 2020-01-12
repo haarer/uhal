@@ -113,7 +113,8 @@ void setCB(voidFuncPtr cb) {
 
 //template<uint8_t INTNumber,void callback(void)> void HALINT<INTNumber,callback>::__vector_handleINT2(void){  callback();}
 
-
+#elif defined(STM32F1)
+#warning "NO Interrupt support for this architecture"
 #else
 #error "HAL not defined for this architecture"
 #endif

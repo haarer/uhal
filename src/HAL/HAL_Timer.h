@@ -34,7 +34,8 @@ while (ms--)
 
 
 
-
+#elif defined(STM32F1)
+#warning "NO Timer support for this architecture"
 #else
 #error "HAL not defined for this architecture"
 #endif

@@ -28,6 +28,7 @@
 // ---------------------------------- AVR specific ------------------------------------------
 #include <avr/io.h>
 #include <avr/interrupt.h>
+#elif defined(STM32F1)
 
 #else
 #error "HAL not defined for this architecture"
