@@ -218,10 +218,10 @@ static GenericPin<avr_pin_type::PIN_PL7> pl7;
     template< auto cpu, package_type pkg> struct GenericCPU
     {
         public:
-            static const long ClockMhz = F_CPU;
             //typedef typename cpu_pins<cpu, pkg>::pin_type cpu_pins; //FIXME: this depends on the package type
             static const cpu_pin_list<cpu, pkg> pins;
-            
+            static inline void delay(double d) { _delay_ms(d); }
+            static inline void delayMicroseconds(double us) { _delay_us(us); }            
 
     };
 
