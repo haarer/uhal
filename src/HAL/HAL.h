@@ -34,8 +34,6 @@
 #error "HAL not defined for this architecture"
 #endif
 
-// ---------------------------- Timing and CPU Frequency -----------------------------------
-#include "HAL_Delay.h"
 
 // ---------------------------- UART subsystem ---------------------------------------------
 #include "HAL_UART.h"
