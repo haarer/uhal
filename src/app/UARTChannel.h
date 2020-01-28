@@ -105,7 +105,7 @@ private:
 
 	UARTChannel();
 
-protected:
+public:
 	inline __attribute__((always_inline))
 	void Transmit(uint8_t data) {
 		/* Wait for empty transmit buffer */
