@@ -17,7 +17,8 @@ namespace UHAL
         AVR_ATmega1280,
         AVR_ATmega1281,
         AVR_ATmega2560,
-        AVR_ATmega2561}avr_cpu_type;
+        AVR_ATmega2561,
+        AVR_ATtiny1614}avr_cpu_type;
 
 
     //template<auto cpu,package_type pkg> struct cpu_pins;
@@ -84,6 +85,12 @@ namespace UHAL
                 }pin_type;
     };
 */
+
+    template<> struct cpu_pin_list<AVR_ATtiny1614,PKG_SO14>
+    {
+        static GenericPin<avr_pin_type::PIN_PA4> pa4;
+    };
+
     template<> struct cpu_pin_list<AVR_ATmega328P,PKG_DIL28> //FIXME: this depends on the package type, assumed tqfp 32
     {
         static GenericPin<avr_pin_type::PIN_PB7> pb7;

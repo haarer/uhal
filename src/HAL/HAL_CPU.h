@@ -9,7 +9,8 @@ namespace UHAL
         PKG_TQFP64,
         PKG_LQFP48,
         PKG_TQFP100,
-        PKG_DIL28}package_type;
+        PKG_DIL28,
+        PKG_SO14}package_type;
 
     template< auto cpu, package_type pkg>class GenericCPU;
 }

@@ -26,7 +26,22 @@ namespace UHAL
 		PIN_PL0, PIN_PL1, PIN_PL2, PIN_PL3, PIN_PL4, PIN_PL5, PIN_PL6, PIN_PL7
 	}avr_pin_type;
 
-
+#ifndef DDRA
+// tiny io headers
+#define HAL_AVR_DIR_PIN_OUT(reg, bit_no) \
+		PORT##reg.DIR = (1 << bit_no);        
+#define HAL_AVR_DIR_PIN_IN(reg, bit_no) \
+		PORT##reg.DIR = ~(1 << bit_no);              
+#define HAL_AVR_DIR_PIN_IN_PULLUP(reg, bit_no) \
+		PORT##reg.DIR = ~(1 << bit_no);                     \
+		PORT##reg.OUT = (1 << bit_no);                     
+#define HAL_AVR_SET_PIN_HIGH(reg, bit_no) \
+		PORT##reg.OUT = (1 << bit_no);                
+#define HAL_AVR_SET_PIN_LOW(reg, bit_no) \
+		PORT##reg.OUT = ~(1 << bit_no);              
+#define HAL_AVR_READ_PIN(reg, bit_no)                \
+		return ((PORT##reg.IN & (1 << bit_no)) == (1 << bit_no)); 
+#else
 
 #define HAL_AVR_DIR_PIN_OUT(reg, bit_no) \
 		DDR##reg |= (1 << bit_no);                
@@ -41,7 +56,7 @@ namespace UHAL
 		PORT##reg &= ~(1 << bit_no);              
 #define HAL_AVR_READ_PIN(reg, bit_no)                \
 		return ((PIN##reg & (1 << bit_no)) == (1 << bit_no)); 
-
+#endif
 #include "avr_pinfuncs.h"
 
 //------------------------- specialisations for PWM Pins -----------------------------------
@@ -161,6 +176,7 @@ template<> void ::UHAL::GenericPWMPin< avr_pin_type::PIN_PB5>::stopPWM(void)
 	TCCR1A &=  ~ _BV(COM1A1);
 }
 
+#elif defined(__AVR_ATtiny1614__) 
 
 #else
 #error "This chip is not supported!"

@@ -1,5 +1,14 @@
 #ifndef _AVR_PINFUNC_H
 #define _AVR_PINFUNC_H
+#if defined(__AVR_ATtiny1614__)
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PA4>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		A,4)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PA4>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		A,4)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PA4>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	A,4)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PA4>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		A,4)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PA4>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		A,4)}
+template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PA4>::readState(void)    	 	{HAL_AVR_READ_PIN(		    A,4)}
+
+#endif
 #if defined(__AVR_ATmega2560__)
 template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PA0>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		A,0)}
 template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PA0>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		A,0)}
