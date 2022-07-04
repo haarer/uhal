@@ -1,13 +1,442 @@
 #ifndef _AVR_PINFUNC_H
 #define _AVR_PINFUNC_H
-#if defined(__AVR_ATtiny1614__)
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PA4>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		A,4)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PA4>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		A,4)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PA4>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	A,4)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PA4>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		A,4)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PA4>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		A,4)}
-template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PA4>::readState(void)    	 	{HAL_AVR_READ_PIN(		    A,4)}
-
+#if defined(__AVR_ATmega168__)
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB0>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		B,0)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB0>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		B,0)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB0>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	B,0)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB0>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		B,0)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB0>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		B,0)}
+template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PB0>::readState(void)    	 	{HAL_AVR_READ_PIN(		    B,0)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB1>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		B,1)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB1>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		B,1)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB1>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	B,1)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB1>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		B,1)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB1>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		B,1)}
+template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PB1>::readState(void)    	 	{HAL_AVR_READ_PIN(		    B,1)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB2>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		B,2)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB2>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		B,2)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB2>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	B,2)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB2>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		B,2)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB2>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		B,2)}
+template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PB2>::readState(void)    	 	{HAL_AVR_READ_PIN(		    B,2)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB3>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		B,3)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB3>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		B,3)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB3>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	B,3)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB3>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		B,3)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB3>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		B,3)}
+template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PB3>::readState(void)    	 	{HAL_AVR_READ_PIN(		    B,3)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB4>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		B,4)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB4>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		B,4)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB4>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	B,4)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB4>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		B,4)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB4>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		B,4)}
+template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PB4>::readState(void)    	 	{HAL_AVR_READ_PIN(		    B,4)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB5>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		B,5)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB5>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		B,5)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB5>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	B,5)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB5>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		B,5)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB5>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		B,5)}
+template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PB5>::readState(void)    	 	{HAL_AVR_READ_PIN(		    B,5)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB6>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		B,6)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB6>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		B,6)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB6>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	B,6)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB6>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		B,6)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB6>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		B,6)}
+template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PB6>::readState(void)    	 	{HAL_AVR_READ_PIN(		    B,6)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB7>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		B,7)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB7>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		B,7)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB7>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	B,7)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB7>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		B,7)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB7>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		B,7)}
+template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PB7>::readState(void)    	 	{HAL_AVR_READ_PIN(		    B,7)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC0>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		C,0)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC0>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		C,0)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC0>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	C,0)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC0>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		C,0)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC0>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		C,0)}
+template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PC0>::readState(void)    	 	{HAL_AVR_READ_PIN(		    C,0)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC1>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		C,1)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC1>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		C,1)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC1>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	C,1)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC1>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		C,1)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC1>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		C,1)}
+template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PC1>::readState(void)    	 	{HAL_AVR_READ_PIN(		    C,1)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC2>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		C,2)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC2>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		C,2)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC2>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	C,2)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC2>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		C,2)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC2>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		C,2)}
+template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PC2>::readState(void)    	 	{HAL_AVR_READ_PIN(		    C,2)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC3>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		C,3)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC3>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		C,3)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC3>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	C,3)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC3>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		C,3)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC3>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		C,3)}
+template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PC3>::readState(void)    	 	{HAL_AVR_READ_PIN(		    C,3)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC4>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		C,4)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC4>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		C,4)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC4>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	C,4)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC4>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		C,4)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC4>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		C,4)}
+template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PC4>::readState(void)    	 	{HAL_AVR_READ_PIN(		    C,4)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC5>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		C,5)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC5>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		C,5)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC5>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	C,5)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC5>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		C,5)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC5>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		C,5)}
+template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PC5>::readState(void)    	 	{HAL_AVR_READ_PIN(		    C,5)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC6>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		C,6)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC6>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		C,6)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC6>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	C,6)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC6>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		C,6)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC6>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		C,6)}
+template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PC6>::readState(void)    	 	{HAL_AVR_READ_PIN(		    C,6)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC7>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		C,7)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC7>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		C,7)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC7>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	C,7)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC7>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		C,7)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC7>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		C,7)}
+template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PC7>::readState(void)    	 	{HAL_AVR_READ_PIN(		    C,7)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD0>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		D,0)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD0>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		D,0)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD0>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	D,0)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD0>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		D,0)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD0>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		D,0)}
+template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PD0>::readState(void)    	 	{HAL_AVR_READ_PIN(		    D,0)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD1>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		D,1)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD1>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		D,1)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD1>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	D,1)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD1>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		D,1)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD1>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		D,1)}
+template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PD1>::readState(void)    	 	{HAL_AVR_READ_PIN(		    D,1)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD2>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		D,2)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD2>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		D,2)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD2>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	D,2)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD2>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		D,2)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD2>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		D,2)}
+template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PD2>::readState(void)    	 	{HAL_AVR_READ_PIN(		    D,2)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD3>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		D,3)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD3>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		D,3)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD3>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	D,3)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD3>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		D,3)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD3>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		D,3)}
+template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PD3>::readState(void)    	 	{HAL_AVR_READ_PIN(		    D,3)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD4>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		D,4)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD4>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		D,4)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD4>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	D,4)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD4>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		D,4)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD4>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		D,4)}
+template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PD4>::readState(void)    	 	{HAL_AVR_READ_PIN(		    D,4)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD5>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		D,5)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD5>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		D,5)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD5>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	D,5)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD5>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		D,5)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD5>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		D,5)}
+template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PD5>::readState(void)    	 	{HAL_AVR_READ_PIN(		    D,5)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD6>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		D,6)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD6>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		D,6)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD6>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	D,6)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD6>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		D,6)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD6>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		D,6)}
+template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PD6>::readState(void)    	 	{HAL_AVR_READ_PIN(		    D,6)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD7>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		D,7)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD7>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		D,7)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD7>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	D,7)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD7>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		D,7)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD7>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		D,7)}
+template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PD7>::readState(void)    	 	{HAL_AVR_READ_PIN(		    D,7)}
+#endif
+#if defined(__AVR_ATmega168P__)
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB0>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		B,0)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB0>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		B,0)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB0>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	B,0)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB0>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		B,0)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB0>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		B,0)}
+template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PB0>::readState(void)    	 	{HAL_AVR_READ_PIN(		    B,0)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB1>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		B,1)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB1>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		B,1)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB1>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	B,1)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB1>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		B,1)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB1>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		B,1)}
+template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PB1>::readState(void)    	 	{HAL_AVR_READ_PIN(		    B,1)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB2>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		B,2)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB2>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		B,2)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB2>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	B,2)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB2>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		B,2)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB2>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		B,2)}
+template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PB2>::readState(void)    	 	{HAL_AVR_READ_PIN(		    B,2)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB3>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		B,3)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB3>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		B,3)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB3>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	B,3)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB3>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		B,3)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB3>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		B,3)}
+template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PB3>::readState(void)    	 	{HAL_AVR_READ_PIN(		    B,3)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB4>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		B,4)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB4>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		B,4)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB4>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	B,4)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB4>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		B,4)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB4>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		B,4)}
+template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PB4>::readState(void)    	 	{HAL_AVR_READ_PIN(		    B,4)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB5>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		B,5)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB5>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		B,5)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB5>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	B,5)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB5>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		B,5)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB5>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		B,5)}
+template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PB5>::readState(void)    	 	{HAL_AVR_READ_PIN(		    B,5)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB6>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		B,6)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB6>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		B,6)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB6>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	B,6)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB6>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		B,6)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB6>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		B,6)}
+template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PB6>::readState(void)    	 	{HAL_AVR_READ_PIN(		    B,6)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB7>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		B,7)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB7>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		B,7)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB7>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	B,7)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB7>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		B,7)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB7>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		B,7)}
+template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PB7>::readState(void)    	 	{HAL_AVR_READ_PIN(		    B,7)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC0>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		C,0)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC0>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		C,0)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC0>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	C,0)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC0>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		C,0)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC0>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		C,0)}
+template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PC0>::readState(void)    	 	{HAL_AVR_READ_PIN(		    C,0)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC1>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		C,1)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC1>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		C,1)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC1>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	C,1)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC1>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		C,1)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC1>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		C,1)}
+template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PC1>::readState(void)    	 	{HAL_AVR_READ_PIN(		    C,1)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC2>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		C,2)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC2>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		C,2)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC2>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	C,2)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC2>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		C,2)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC2>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		C,2)}
+template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PC2>::readState(void)    	 	{HAL_AVR_READ_PIN(		    C,2)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC3>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		C,3)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC3>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		C,3)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC3>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	C,3)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC3>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		C,3)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC3>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		C,3)}
+template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PC3>::readState(void)    	 	{HAL_AVR_READ_PIN(		    C,3)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC4>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		C,4)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC4>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		C,4)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC4>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	C,4)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC4>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		C,4)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC4>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		C,4)}
+template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PC4>::readState(void)    	 	{HAL_AVR_READ_PIN(		    C,4)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC5>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		C,5)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC5>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		C,5)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC5>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	C,5)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC5>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		C,5)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC5>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		C,5)}
+template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PC5>::readState(void)    	 	{HAL_AVR_READ_PIN(		    C,5)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC6>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		C,6)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC6>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		C,6)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC6>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	C,6)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC6>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		C,6)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC6>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		C,6)}
+template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PC6>::readState(void)    	 	{HAL_AVR_READ_PIN(		    C,6)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC7>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		C,7)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC7>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		C,7)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC7>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	C,7)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC7>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		C,7)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC7>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		C,7)}
+template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PC7>::readState(void)    	 	{HAL_AVR_READ_PIN(		    C,7)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD0>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		D,0)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD0>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		D,0)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD0>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	D,0)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD0>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		D,0)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD0>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		D,0)}
+template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PD0>::readState(void)    	 	{HAL_AVR_READ_PIN(		    D,0)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD1>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		D,1)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD1>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		D,1)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD1>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	D,1)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD1>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		D,1)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD1>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		D,1)}
+template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PD1>::readState(void)    	 	{HAL_AVR_READ_PIN(		    D,1)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD2>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		D,2)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD2>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		D,2)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD2>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	D,2)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD2>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		D,2)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD2>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		D,2)}
+template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PD2>::readState(void)    	 	{HAL_AVR_READ_PIN(		    D,2)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD3>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		D,3)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD3>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		D,3)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD3>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	D,3)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD3>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		D,3)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD3>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		D,3)}
+template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PD3>::readState(void)    	 	{HAL_AVR_READ_PIN(		    D,3)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD4>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		D,4)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD4>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		D,4)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD4>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	D,4)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD4>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		D,4)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD4>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		D,4)}
+template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PD4>::readState(void)    	 	{HAL_AVR_READ_PIN(		    D,4)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD5>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		D,5)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD5>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		D,5)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD5>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	D,5)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD5>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		D,5)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD5>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		D,5)}
+template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PD5>::readState(void)    	 	{HAL_AVR_READ_PIN(		    D,5)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD6>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		D,6)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD6>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		D,6)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD6>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	D,6)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD6>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		D,6)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD6>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		D,6)}
+template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PD6>::readState(void)    	 	{HAL_AVR_READ_PIN(		    D,6)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD7>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		D,7)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD7>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		D,7)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD7>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	D,7)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD7>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		D,7)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD7>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		D,7)}
+template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PD7>::readState(void)    	 	{HAL_AVR_READ_PIN(		    D,7)}
+#endif
+#if defined(__AVR_ATmega328P__)
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB0>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		B,0)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB0>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		B,0)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB0>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	B,0)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB0>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		B,0)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB0>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		B,0)}
+template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PB0>::readState(void)    	 	{HAL_AVR_READ_PIN(		    B,0)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB1>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		B,1)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB1>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		B,1)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB1>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	B,1)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB1>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		B,1)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB1>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		B,1)}
+template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PB1>::readState(void)    	 	{HAL_AVR_READ_PIN(		    B,1)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB2>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		B,2)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB2>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		B,2)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB2>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	B,2)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB2>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		B,2)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB2>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		B,2)}
+template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PB2>::readState(void)    	 	{HAL_AVR_READ_PIN(		    B,2)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB3>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		B,3)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB3>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		B,3)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB3>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	B,3)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB3>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		B,3)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB3>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		B,3)}
+template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PB3>::readState(void)    	 	{HAL_AVR_READ_PIN(		    B,3)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB4>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		B,4)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB4>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		B,4)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB4>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	B,4)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB4>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		B,4)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB4>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		B,4)}
+template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PB4>::readState(void)    	 	{HAL_AVR_READ_PIN(		    B,4)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB5>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		B,5)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB5>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		B,5)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB5>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	B,5)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB5>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		B,5)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB5>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		B,5)}
+template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PB5>::readState(void)    	 	{HAL_AVR_READ_PIN(		    B,5)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB6>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		B,6)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB6>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		B,6)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB6>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	B,6)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB6>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		B,6)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB6>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		B,6)}
+template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PB6>::readState(void)    	 	{HAL_AVR_READ_PIN(		    B,6)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB7>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		B,7)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB7>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		B,7)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB7>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	B,7)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB7>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		B,7)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB7>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		B,7)}
+template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PB7>::readState(void)    	 	{HAL_AVR_READ_PIN(		    B,7)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC0>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		C,0)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC0>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		C,0)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC0>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	C,0)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC0>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		C,0)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC0>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		C,0)}
+template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PC0>::readState(void)    	 	{HAL_AVR_READ_PIN(		    C,0)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC1>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		C,1)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC1>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		C,1)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC1>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	C,1)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC1>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		C,1)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC1>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		C,1)}
+template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PC1>::readState(void)    	 	{HAL_AVR_READ_PIN(		    C,1)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC2>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		C,2)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC2>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		C,2)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC2>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	C,2)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC2>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		C,2)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC2>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		C,2)}
+template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PC2>::readState(void)    	 	{HAL_AVR_READ_PIN(		    C,2)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC3>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		C,3)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC3>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		C,3)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC3>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	C,3)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC3>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		C,3)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC3>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		C,3)}
+template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PC3>::readState(void)    	 	{HAL_AVR_READ_PIN(		    C,3)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC4>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		C,4)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC4>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		C,4)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC4>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	C,4)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC4>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		C,4)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC4>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		C,4)}
+template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PC4>::readState(void)    	 	{HAL_AVR_READ_PIN(		    C,4)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC5>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		C,5)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC5>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		C,5)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC5>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	C,5)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC5>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		C,5)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC5>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		C,5)}
+template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PC5>::readState(void)    	 	{HAL_AVR_READ_PIN(		    C,5)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC6>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		C,6)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC6>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		C,6)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC6>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	C,6)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC6>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		C,6)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC6>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		C,6)}
+template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PC6>::readState(void)    	 	{HAL_AVR_READ_PIN(		    C,6)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC7>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		C,7)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC7>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		C,7)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC7>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	C,7)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC7>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		C,7)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC7>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		C,7)}
+template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PC7>::readState(void)    	 	{HAL_AVR_READ_PIN(		    C,7)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD0>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		D,0)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD0>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		D,0)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD0>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	D,0)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD0>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		D,0)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD0>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		D,0)}
+template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PD0>::readState(void)    	 	{HAL_AVR_READ_PIN(		    D,0)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD1>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		D,1)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD1>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		D,1)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD1>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	D,1)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD1>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		D,1)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD1>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		D,1)}
+template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PD1>::readState(void)    	 	{HAL_AVR_READ_PIN(		    D,1)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD2>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		D,2)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD2>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		D,2)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD2>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	D,2)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD2>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		D,2)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD2>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		D,2)}
+template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PD2>::readState(void)    	 	{HAL_AVR_READ_PIN(		    D,2)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD3>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		D,3)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD3>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		D,3)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD3>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	D,3)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD3>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		D,3)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD3>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		D,3)}
+template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PD3>::readState(void)    	 	{HAL_AVR_READ_PIN(		    D,3)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD4>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		D,4)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD4>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		D,4)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD4>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	D,4)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD4>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		D,4)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD4>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		D,4)}
+template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PD4>::readState(void)    	 	{HAL_AVR_READ_PIN(		    D,4)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD5>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		D,5)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD5>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		D,5)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD5>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	D,5)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD5>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		D,5)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD5>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		D,5)}
+template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PD5>::readState(void)    	 	{HAL_AVR_READ_PIN(		    D,5)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD6>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		D,6)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD6>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		D,6)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD6>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	D,6)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD6>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		D,6)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD6>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		D,6)}
+template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PD6>::readState(void)    	 	{HAL_AVR_READ_PIN(		    D,6)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD7>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		D,7)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD7>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		D,7)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD7>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	D,7)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD7>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		D,7)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD7>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		D,7)}
+template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PD7>::readState(void)    	 	{HAL_AVR_READ_PIN(		    D,7)}
 #endif
 #if defined(__AVR_ATmega2560__)
 template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PA0>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		A,0)}
@@ -539,444 +968,6 @@ template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PL7>::writeHi
 template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PL7>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		L,7)}
 template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PL7>::readState(void)    	 	{HAL_AVR_READ_PIN(		    L,7)}
 #endif
-#if defined(__AVR_ATmega168P__)
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB0>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		B,0)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB0>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		B,0)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB0>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	B,0)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB0>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		B,0)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB0>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		B,0)}
-template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PB0>::readState(void)    	 	{HAL_AVR_READ_PIN(		    B,0)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB1>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		B,1)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB1>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		B,1)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB1>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	B,1)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB1>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		B,1)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB1>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		B,1)}
-template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PB1>::readState(void)    	 	{HAL_AVR_READ_PIN(		    B,1)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB2>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		B,2)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB2>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		B,2)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB2>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	B,2)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB2>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		B,2)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB2>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		B,2)}
-template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PB2>::readState(void)    	 	{HAL_AVR_READ_PIN(		    B,2)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB3>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		B,3)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB3>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		B,3)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB3>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	B,3)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB3>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		B,3)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB3>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		B,3)}
-template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PB3>::readState(void)    	 	{HAL_AVR_READ_PIN(		    B,3)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB4>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		B,4)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB4>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		B,4)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB4>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	B,4)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB4>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		B,4)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB4>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		B,4)}
-template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PB4>::readState(void)    	 	{HAL_AVR_READ_PIN(		    B,4)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB5>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		B,5)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB5>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		B,5)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB5>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	B,5)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB5>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		B,5)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB5>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		B,5)}
-template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PB5>::readState(void)    	 	{HAL_AVR_READ_PIN(		    B,5)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB6>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		B,6)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB6>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		B,6)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB6>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	B,6)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB6>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		B,6)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB6>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		B,6)}
-template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PB6>::readState(void)    	 	{HAL_AVR_READ_PIN(		    B,6)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB7>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		B,7)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB7>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		B,7)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB7>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	B,7)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB7>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		B,7)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB7>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		B,7)}
-template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PB7>::readState(void)    	 	{HAL_AVR_READ_PIN(		    B,7)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC0>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		C,0)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC0>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		C,0)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC0>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	C,0)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC0>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		C,0)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC0>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		C,0)}
-template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PC0>::readState(void)    	 	{HAL_AVR_READ_PIN(		    C,0)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC1>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		C,1)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC1>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		C,1)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC1>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	C,1)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC1>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		C,1)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC1>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		C,1)}
-template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PC1>::readState(void)    	 	{HAL_AVR_READ_PIN(		    C,1)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC2>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		C,2)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC2>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		C,2)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC2>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	C,2)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC2>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		C,2)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC2>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		C,2)}
-template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PC2>::readState(void)    	 	{HAL_AVR_READ_PIN(		    C,2)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC3>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		C,3)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC3>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		C,3)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC3>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	C,3)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC3>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		C,3)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC3>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		C,3)}
-template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PC3>::readState(void)    	 	{HAL_AVR_READ_PIN(		    C,3)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC4>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		C,4)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC4>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		C,4)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC4>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	C,4)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC4>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		C,4)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC4>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		C,4)}
-template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PC4>::readState(void)    	 	{HAL_AVR_READ_PIN(		    C,4)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC5>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		C,5)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC5>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		C,5)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC5>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	C,5)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC5>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		C,5)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC5>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		C,5)}
-template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PC5>::readState(void)    	 	{HAL_AVR_READ_PIN(		    C,5)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC6>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		C,6)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC6>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		C,6)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC6>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	C,6)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC6>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		C,6)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC6>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		C,6)}
-template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PC6>::readState(void)    	 	{HAL_AVR_READ_PIN(		    C,6)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC7>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		C,7)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC7>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		C,7)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC7>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	C,7)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC7>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		C,7)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC7>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		C,7)}
-template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PC7>::readState(void)    	 	{HAL_AVR_READ_PIN(		    C,7)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD0>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		D,0)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD0>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		D,0)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD0>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	D,0)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD0>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		D,0)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD0>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		D,0)}
-template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PD0>::readState(void)    	 	{HAL_AVR_READ_PIN(		    D,0)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD1>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		D,1)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD1>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		D,1)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD1>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	D,1)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD1>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		D,1)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD1>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		D,1)}
-template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PD1>::readState(void)    	 	{HAL_AVR_READ_PIN(		    D,1)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD2>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		D,2)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD2>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		D,2)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD2>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	D,2)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD2>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		D,2)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD2>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		D,2)}
-template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PD2>::readState(void)    	 	{HAL_AVR_READ_PIN(		    D,2)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD3>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		D,3)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD3>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		D,3)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD3>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	D,3)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD3>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		D,3)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD3>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		D,3)}
-template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PD3>::readState(void)    	 	{HAL_AVR_READ_PIN(		    D,3)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD4>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		D,4)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD4>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		D,4)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD4>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	D,4)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD4>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		D,4)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD4>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		D,4)}
-template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PD4>::readState(void)    	 	{HAL_AVR_READ_PIN(		    D,4)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD5>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		D,5)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD5>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		D,5)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD5>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	D,5)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD5>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		D,5)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD5>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		D,5)}
-template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PD5>::readState(void)    	 	{HAL_AVR_READ_PIN(		    D,5)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD6>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		D,6)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD6>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		D,6)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD6>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	D,6)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD6>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		D,6)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD6>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		D,6)}
-template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PD6>::readState(void)    	 	{HAL_AVR_READ_PIN(		    D,6)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD7>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		D,7)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD7>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		D,7)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD7>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	D,7)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD7>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		D,7)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD7>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		D,7)}
-template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PD7>::readState(void)    	 	{HAL_AVR_READ_PIN(		    D,7)}
-#endif
-#if defined(__AVR_ATmega328P__)
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB0>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		B,0)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB0>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		B,0)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB0>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	B,0)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB0>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		B,0)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB0>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		B,0)}
-template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PB0>::readState(void)    	 	{HAL_AVR_READ_PIN(		    B,0)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB1>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		B,1)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB1>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		B,1)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB1>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	B,1)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB1>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		B,1)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB1>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		B,1)}
-template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PB1>::readState(void)    	 	{HAL_AVR_READ_PIN(		    B,1)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB2>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		B,2)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB2>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		B,2)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB2>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	B,2)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB2>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		B,2)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB2>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		B,2)}
-template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PB2>::readState(void)    	 	{HAL_AVR_READ_PIN(		    B,2)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB3>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		B,3)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB3>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		B,3)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB3>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	B,3)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB3>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		B,3)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB3>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		B,3)}
-template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PB3>::readState(void)    	 	{HAL_AVR_READ_PIN(		    B,3)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB4>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		B,4)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB4>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		B,4)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB4>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	B,4)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB4>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		B,4)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB4>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		B,4)}
-template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PB4>::readState(void)    	 	{HAL_AVR_READ_PIN(		    B,4)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB5>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		B,5)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB5>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		B,5)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB5>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	B,5)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB5>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		B,5)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB5>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		B,5)}
-template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PB5>::readState(void)    	 	{HAL_AVR_READ_PIN(		    B,5)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB6>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		B,6)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB6>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		B,6)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB6>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	B,6)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB6>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		B,6)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB6>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		B,6)}
-template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PB6>::readState(void)    	 	{HAL_AVR_READ_PIN(		    B,6)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB7>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		B,7)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB7>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		B,7)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB7>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	B,7)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB7>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		B,7)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB7>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		B,7)}
-template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PB7>::readState(void)    	 	{HAL_AVR_READ_PIN(		    B,7)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC0>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		C,0)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC0>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		C,0)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC0>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	C,0)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC0>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		C,0)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC0>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		C,0)}
-template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PC0>::readState(void)    	 	{HAL_AVR_READ_PIN(		    C,0)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC1>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		C,1)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC1>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		C,1)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC1>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	C,1)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC1>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		C,1)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC1>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		C,1)}
-template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PC1>::readState(void)    	 	{HAL_AVR_READ_PIN(		    C,1)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC2>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		C,2)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC2>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		C,2)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC2>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	C,2)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC2>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		C,2)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC2>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		C,2)}
-template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PC2>::readState(void)    	 	{HAL_AVR_READ_PIN(		    C,2)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC3>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		C,3)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC3>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		C,3)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC3>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	C,3)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC3>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		C,3)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC3>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		C,3)}
-template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PC3>::readState(void)    	 	{HAL_AVR_READ_PIN(		    C,3)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC4>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		C,4)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC4>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		C,4)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC4>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	C,4)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC4>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		C,4)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC4>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		C,4)}
-template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PC4>::readState(void)    	 	{HAL_AVR_READ_PIN(		    C,4)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC5>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		C,5)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC5>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		C,5)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC5>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	C,5)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC5>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		C,5)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC5>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		C,5)}
-template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PC5>::readState(void)    	 	{HAL_AVR_READ_PIN(		    C,5)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC6>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		C,6)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC6>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		C,6)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC6>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	C,6)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC6>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		C,6)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC6>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		C,6)}
-template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PC6>::readState(void)    	 	{HAL_AVR_READ_PIN(		    C,6)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC7>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		C,7)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC7>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		C,7)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC7>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	C,7)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC7>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		C,7)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC7>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		C,7)}
-template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PC7>::readState(void)    	 	{HAL_AVR_READ_PIN(		    C,7)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD0>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		D,0)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD0>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		D,0)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD0>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	D,0)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD0>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		D,0)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD0>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		D,0)}
-template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PD0>::readState(void)    	 	{HAL_AVR_READ_PIN(		    D,0)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD1>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		D,1)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD1>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		D,1)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD1>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	D,1)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD1>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		D,1)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD1>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		D,1)}
-template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PD1>::readState(void)    	 	{HAL_AVR_READ_PIN(		    D,1)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD2>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		D,2)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD2>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		D,2)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD2>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	D,2)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD2>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		D,2)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD2>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		D,2)}
-template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PD2>::readState(void)    	 	{HAL_AVR_READ_PIN(		    D,2)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD3>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		D,3)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD3>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		D,3)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD3>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	D,3)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD3>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		D,3)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD3>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		D,3)}
-template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PD3>::readState(void)    	 	{HAL_AVR_READ_PIN(		    D,3)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD4>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		D,4)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD4>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		D,4)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD4>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	D,4)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD4>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		D,4)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD4>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		D,4)}
-template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PD4>::readState(void)    	 	{HAL_AVR_READ_PIN(		    D,4)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD5>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		D,5)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD5>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		D,5)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD5>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	D,5)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD5>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		D,5)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD5>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		D,5)}
-template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PD5>::readState(void)    	 	{HAL_AVR_READ_PIN(		    D,5)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD6>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		D,6)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD6>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		D,6)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD6>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	D,6)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD6>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		D,6)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD6>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		D,6)}
-template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PD6>::readState(void)    	 	{HAL_AVR_READ_PIN(		    D,6)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD7>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		D,7)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD7>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		D,7)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD7>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	D,7)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD7>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		D,7)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD7>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		D,7)}
-template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PD7>::readState(void)    	 	{HAL_AVR_READ_PIN(		    D,7)}
-#endif
-#if defined(__AVR_ATmega168__)
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB0>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		B,0)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB0>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		B,0)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB0>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	B,0)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB0>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		B,0)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB0>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		B,0)}
-template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PB0>::readState(void)    	 	{HAL_AVR_READ_PIN(		    B,0)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB1>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		B,1)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB1>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		B,1)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB1>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	B,1)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB1>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		B,1)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB1>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		B,1)}
-template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PB1>::readState(void)    	 	{HAL_AVR_READ_PIN(		    B,1)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB2>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		B,2)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB2>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		B,2)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB2>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	B,2)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB2>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		B,2)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB2>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		B,2)}
-template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PB2>::readState(void)    	 	{HAL_AVR_READ_PIN(		    B,2)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB3>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		B,3)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB3>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		B,3)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB3>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	B,3)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB3>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		B,3)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB3>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		B,3)}
-template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PB3>::readState(void)    	 	{HAL_AVR_READ_PIN(		    B,3)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB4>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		B,4)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB4>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		B,4)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB4>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	B,4)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB4>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		B,4)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB4>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		B,4)}
-template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PB4>::readState(void)    	 	{HAL_AVR_READ_PIN(		    B,4)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB5>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		B,5)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB5>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		B,5)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB5>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	B,5)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB5>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		B,5)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB5>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		B,5)}
-template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PB5>::readState(void)    	 	{HAL_AVR_READ_PIN(		    B,5)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB6>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		B,6)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB6>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		B,6)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB6>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	B,6)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB6>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		B,6)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB6>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		B,6)}
-template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PB6>::readState(void)    	 	{HAL_AVR_READ_PIN(		    B,6)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB7>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		B,7)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB7>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		B,7)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB7>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	B,7)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB7>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		B,7)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB7>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		B,7)}
-template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PB7>::readState(void)    	 	{HAL_AVR_READ_PIN(		    B,7)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC0>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		C,0)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC0>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		C,0)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC0>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	C,0)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC0>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		C,0)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC0>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		C,0)}
-template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PC0>::readState(void)    	 	{HAL_AVR_READ_PIN(		    C,0)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC1>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		C,1)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC1>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		C,1)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC1>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	C,1)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC1>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		C,1)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC1>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		C,1)}
-template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PC1>::readState(void)    	 	{HAL_AVR_READ_PIN(		    C,1)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC2>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		C,2)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC2>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		C,2)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC2>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	C,2)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC2>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		C,2)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC2>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		C,2)}
-template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PC2>::readState(void)    	 	{HAL_AVR_READ_PIN(		    C,2)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC3>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		C,3)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC3>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		C,3)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC3>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	C,3)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC3>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		C,3)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC3>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		C,3)}
-template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PC3>::readState(void)    	 	{HAL_AVR_READ_PIN(		    C,3)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC4>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		C,4)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC4>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		C,4)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC4>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	C,4)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC4>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		C,4)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC4>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		C,4)}
-template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PC4>::readState(void)    	 	{HAL_AVR_READ_PIN(		    C,4)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC5>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		C,5)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC5>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		C,5)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC5>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	C,5)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC5>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		C,5)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC5>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		C,5)}
-template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PC5>::readState(void)    	 	{HAL_AVR_READ_PIN(		    C,5)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC6>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		C,6)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC6>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		C,6)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC6>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	C,6)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC6>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		C,6)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC6>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		C,6)}
-template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PC6>::readState(void)    	 	{HAL_AVR_READ_PIN(		    C,6)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC7>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		C,7)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC7>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		C,7)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC7>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	C,7)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC7>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		C,7)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PC7>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		C,7)}
-template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PC7>::readState(void)    	 	{HAL_AVR_READ_PIN(		    C,7)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD0>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		D,0)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD0>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		D,0)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD0>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	D,0)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD0>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		D,0)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD0>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		D,0)}
-template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PD0>::readState(void)    	 	{HAL_AVR_READ_PIN(		    D,0)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD1>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		D,1)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD1>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		D,1)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD1>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	D,1)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD1>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		D,1)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD1>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		D,1)}
-template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PD1>::readState(void)    	 	{HAL_AVR_READ_PIN(		    D,1)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD2>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		D,2)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD2>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		D,2)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD2>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	D,2)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD2>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		D,2)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD2>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		D,2)}
-template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PD2>::readState(void)    	 	{HAL_AVR_READ_PIN(		    D,2)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD3>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		D,3)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD3>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		D,3)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD3>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	D,3)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD3>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		D,3)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD3>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		D,3)}
-template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PD3>::readState(void)    	 	{HAL_AVR_READ_PIN(		    D,3)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD4>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		D,4)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD4>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		D,4)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD4>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	D,4)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD4>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		D,4)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD4>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		D,4)}
-template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PD4>::readState(void)    	 	{HAL_AVR_READ_PIN(		    D,4)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD5>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		D,5)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD5>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		D,5)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD5>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	D,5)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD5>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		D,5)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD5>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		D,5)}
-template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PD5>::readState(void)    	 	{HAL_AVR_READ_PIN(		    D,5)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD6>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		D,6)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD6>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		D,6)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD6>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	D,6)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD6>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		D,6)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD6>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		D,6)}
-template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PD6>::readState(void)    	 	{HAL_AVR_READ_PIN(		    D,6)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD7>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		D,7)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD7>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		D,7)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD7>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	D,7)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD7>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		D,7)}
-template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PD7>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		D,7)}
-template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PD7>::readState(void)    	 	{HAL_AVR_READ_PIN(		    D,7)}
-#endif
 #if defined(__AVR_ATmega1280__)
 template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PA0>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		A,0)}
 template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PA0>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		A,0)}
@@ -1506,5 +1497,103 @@ template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PL7>::modeInP
 template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PL7>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		L,7)}
 template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PL7>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		L,7)}
 template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PL7>::readState(void)    	 	{HAL_AVR_READ_PIN(		    L,7)}
+#endif
+#if defined(__AVR_ATtiny1614__)
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PA0>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		A,0)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PA0>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		A,0)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PA0>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	A,0)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PA0>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		A,0)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PA0>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		A,0)}
+template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PA0>::readState(void)    	 	{HAL_AVR_READ_PIN(		    A,0)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PA1>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		A,1)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PA1>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		A,1)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PA1>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	A,1)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PA1>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		A,1)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PA1>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		A,1)}
+template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PA1>::readState(void)    	 	{HAL_AVR_READ_PIN(		    A,1)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PA2>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		A,2)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PA2>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		A,2)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PA2>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	A,2)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PA2>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		A,2)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PA2>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		A,2)}
+template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PA2>::readState(void)    	 	{HAL_AVR_READ_PIN(		    A,2)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PA3>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		A,3)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PA3>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		A,3)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PA3>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	A,3)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PA3>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		A,3)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PA3>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		A,3)}
+template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PA3>::readState(void)    	 	{HAL_AVR_READ_PIN(		    A,3)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PA4>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		A,4)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PA4>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		A,4)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PA4>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	A,4)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PA4>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		A,4)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PA4>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		A,4)}
+template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PA4>::readState(void)    	 	{HAL_AVR_READ_PIN(		    A,4)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PA5>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		A,5)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PA5>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		A,5)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PA5>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	A,5)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PA5>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		A,5)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PA5>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		A,5)}
+template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PA5>::readState(void)    	 	{HAL_AVR_READ_PIN(		    A,5)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PA6>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		A,6)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PA6>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		A,6)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PA6>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	A,6)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PA6>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		A,6)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PA6>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		A,6)}
+template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PA6>::readState(void)    	 	{HAL_AVR_READ_PIN(		    A,6)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PA7>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		A,7)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PA7>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		A,7)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PA7>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	A,7)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PA7>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		A,7)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PA7>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		A,7)}
+template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PA7>::readState(void)    	 	{HAL_AVR_READ_PIN(		    A,7)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB0>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		B,0)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB0>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		B,0)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB0>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	B,0)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB0>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		B,0)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB0>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		B,0)}
+template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PB0>::readState(void)    	 	{HAL_AVR_READ_PIN(		    B,0)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB1>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		B,1)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB1>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		B,1)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB1>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	B,1)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB1>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		B,1)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB1>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		B,1)}
+template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PB1>::readState(void)    	 	{HAL_AVR_READ_PIN(		    B,1)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB2>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		B,2)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB2>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		B,2)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB2>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	B,2)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB2>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		B,2)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB2>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		B,2)}
+template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PB2>::readState(void)    	 	{HAL_AVR_READ_PIN(		    B,2)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB3>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		B,3)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB3>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		B,3)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB3>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	B,3)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB3>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		B,3)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB3>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		B,3)}
+template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PB3>::readState(void)    	 	{HAL_AVR_READ_PIN(		    B,3)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB4>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		B,4)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB4>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		B,4)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB4>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	B,4)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB4>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		B,4)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB4>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		B,4)}
+template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PB4>::readState(void)    	 	{HAL_AVR_READ_PIN(		    B,4)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB5>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		B,5)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB5>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		B,5)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB5>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	B,5)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB5>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		B,5)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB5>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		B,5)}
+template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PB5>::readState(void)    	 	{HAL_AVR_READ_PIN(		    B,5)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB6>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		B,6)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB6>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		B,6)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB6>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	B,6)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB6>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		B,6)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB6>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		B,6)}
+template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PB6>::readState(void)    	 	{HAL_AVR_READ_PIN(		    B,6)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB7>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		B,7)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB7>::modeIn(void)    	     	{HAL_AVR_DIR_PIN_IN(		B,7)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB7>::modeInPullup(void)    	{HAL_AVR_DIR_PIN_IN_PULLUP(	B,7)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB7>::writeHigh(void)    	 	{HAL_AVR_SET_PIN_HIGH(		B,7)}
+template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_PB7>::writeLow(void)    	 	{HAL_AVR_SET_PIN_LOW(		B,7)}
+template<> inline bool ::UHAL::GenericPin< avr_pin_type::PIN_PB7>::readState(void)    	 	{HAL_AVR_READ_PIN(		    B,7)}
 #endif
 #endif //define _AVR_PINFUNC_H

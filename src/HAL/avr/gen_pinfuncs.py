@@ -3,12 +3,14 @@ import os,string
 #to do : specify subset of port bits, but depends on package
 avr168portset=['B','C','D']
 avr2560portset=['A','B','C','D','E','F','G','H','J','K','L']
+tiny1614portset=['A','B']
 cpupins={
     "__AVR_ATmega168__":avr168portset,
     "__AVR_ATmega168P__":avr168portset,
     "__AVR_ATmega328P__":avr168portset,
     "__AVR_ATmega2560__":avr2560portset,
-    "__AVR_ATmega1280__":avr2560portset}
+    "__AVR_ATmega1280__":avr2560portset,
+    "__AVR_ATtiny1614__":tiny1614portset}
 
 def printPinFunc(f,port,bit):
     f.write("template<> inline const void ::UHAL::GenericPin< avr_pin_type::PIN_P%s%s>::modeOut(void)    	 	{HAL_AVR_DIR_PIN_OUT(		%s,%s)}\n" % (port,bit,port,bit))
@@ -24,7 +26,7 @@ def printCPUPortset(f,cpuset):
             printPinFunc(f,p,bit)
 
 
-f=file("avr_pinfuncs.h",'w')
+f=open("avr_pinfuncs.h",'w')
 
 f.write("#ifndef _AVR_PINFUNC_H\n")
 f.write("#define _AVR_PINFUNC_H\n")
